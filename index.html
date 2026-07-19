@@ -219,7 +219,16 @@ a{color:var(--primary);text-decoration:none}
 <p class="content-p">Presentation layer / 表示层: enables applications to interpret data; may perform translation, encryption/decryption, compression/decompression, and machine-specific representation.</p>
 <p class="content-p">Session layer / 会话层: manages dialog sessions and provides synchronization, checkpoints, and recovery of an interrupted data exchange.</p>
 <div class="source-note">课件来源 / Slide source: SOF203-Chap1-Introduction.pdf, PDF pp. 44-52.</div>
-<table class="layer-table"><thead><tr><th>Layer</th><th>PDU</th><th style="min-width:280px">Core Responsibilities</th><th>Scope</th></tr></thead><tbody><tr><td><strong>5 Application</strong></td><td>Message</td><td>Message format/meaning; HTTP,SMTP,FTP; application procedures</td><td>App-to-app</td></tr><tr><td><strong>4 Transport</strong></td><td>Segment</td><td>Process-to-process; ports; TCP/UDP; reliability, flow & congestion control</td><td>Process-to-process</td></tr><tr><td><strong>3 Network</strong></td><td>Datagram</td><td>Host-to-host; logical IP addressing; routing and forwarding across networks</td><td>Host-to-host</td></tr><tr><td><strong>2 Link</strong></td><td>Frame</td><td>Hop-to-hop; MAC addressing; medium access control; Ethernet,Wi-Fi,PPP</td><td>Hop-to-hop</td></tr><tr><td><strong>1 Physical</strong></td><td>Bits</td><td>Raw bit transmission; signals, modulation; copper, fibre, radio media</td><td>Across medium</td></tr></tbody></table>
+<table class="layer-table"><thead><tr><th>Layer</th><th>中文</th><th style="min-width:280px">Core Responsibility / 核心职责</th><th>Typical Protocols</th></tr></thead><tbody>
+<tr><td><strong>5</strong></td><td><strong>应用层 Application</strong></td><td>支持网络应用，定义消息格式和交互规则<br>Support network applications; define message format and meaning</td><td>HTTP, FTP, SMTP, DNS</td></tr>
+<tr><td><strong>4</strong></td><td><strong>传输层 Transport</strong></td><td>进程到进程的数据传输，可靠/不可靠传输、流量控制、拥塞控制<br>Process-to-process data transfer; reliable/unreliable delivery; flow control; congestion control</td><td>TCP, UDP</td></tr>
+<tr><td><strong>3</strong></td><td><strong>网络层 Network</strong></td><td>主机到主机的传输，逻辑寻址，路由选择<br>Host-to-host delivery across networks; logical addressing; routing</td><td>IP, ICMP, routing protocols</td></tr>
+<tr><td><strong>2</strong></td><td><strong>链路层 Link</strong></td><td>相邻节点间帧传输，MAC寻址，介质访问控制<br>Frame transfer between adjacent nodes; MAC addressing; medium access control</td><td>Ethernet (802.3), WiFi (802.11)</td></tr>
+<tr><td><strong>1</strong></td><td><strong>物理层 Physical</strong></td><td>在物理介质上传输比特流，电压/频率/信号规范<br>Transmitting bits over physical media; voltage, frequency, signal specs</td><td>cables, fiber, radio</td></tr>
+</tbody></table>
+<div class="diagram-box" style="margin-top:12px"><p style="font-size:.88em;color:var(--text2);margin:0"><strong>OSI Extra Layers / OSI 多出的两层：</strong><br>
+<span style="color:var(--accent)">6. Presentation 表示层</span> — 加密/解密、压缩、数据格式转换 / encryption, compression, data format conversion<br>
+<span style="color:var(--accent)">5. Session 会话层</span> — 同步、检查点、恢复 / synchronization, checkpointing, recovery</p></div>
 </section>
 <section id="sec3" class="topic-section">
 <h2 class="topic-title"><span class="en-text">3. Encapsulation and Decapsulation</span>
@@ -265,7 +274,17 @@ a{color:var(--primary);text-decoration:none}
 <h3 class="sub-heading">Packet switching / 分组交换</h3>
 <p class="content-p en-recite">English (memorize) / 英文背诵：Packet switching divides data into packets and shares links among users. No dedicated circuit setup is required; packets are stored and forwarded by routers. Sharing improves resource utilization, but packets may experience variable queueing delay and may be dropped when buffers are full.</p>
 <p class="content-p cn-understand">中文理解：分组交换把数据划分为分组，让多个用户共享链路。它不需要建立专用电路，路由器采用存储转发。共享提高资源利用率，但分组会经历可变的排队时延，缓存满时还可能丢失。</p>
-<div class="source-note">课件来源 / Slide source: SOF203-Chap2-DataTransmission-v2.pdf, PDF pp. 37-42.</div>
+<div class="source-note">课件来源 / Slide source: SOF203-Chap2-DataTransmission-v2.pdf, PDF pp. 37-42.</div><div class="diagram-box" style="margin:14px 0">
+<table class="layer-table" style="font-size:.82em"><thead><tr><th></th><th>Circuit Switching / 电路交换</th><th>Packet Switching / 分组交换</th></tr></thead><tbody>
+<tr><td><strong>连接建立 Connection setup</strong></td><td>需要 (setup → use → teardown)</td><td>不需要 not required</td></tr>
+<tr><td><strong>资源 Resource</strong></td><td>独占 dedicated / isolated path</td><td>共享 shared among users</td></tr>
+<tr><td><strong>延迟 Delay</strong></td><td>建立后稳定无排队 stable, no queuing</td><td>有可变排队延迟 variable queuing delay</td></tr>
+<tr><td><strong>效率 Efficiency</strong></td><td>空闲时浪费 wasting when idle</td><td>充分利用 efficient</td></tr>
+<tr><td><strong>典型网络 Network</strong></td><td>PSTN (电话网) telephone</td><td><strong>Internet 互联网</strong></td></tr>
+</tbody></table>
+</div>
+<div class="qa-answer" style="margin:12px 0 0 0"><div class="label">电路交换优势 / Exam Answer (样题 Q2)</div><p>Circuit-switched networks provide <strong>stable, predictable delay</strong> and <strong>no packet loss</strong> because a dedicated path is reserved end-to-end. This makes them suitable for real-time applications like voice calls.</p><p style="margin-top:6px;color:var(--text2);font-size:.9em">电路交换提供<strong>稳定的、可预测的延迟</strong>且<strong>无丢包</strong>，因为端到端建立了专用路径。适合语音通话等实时应用。</p></div>
+<!-- comparison-table-end -->
 </section>
 <section id="sec7" class="topic-section">
 <h2 class="topic-title"><span class="en-text">7. Four Sources of Packet Delay</span>
