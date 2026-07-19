@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SOF203 期末总复习 | Computer Networks Bilingual Review | XMUM</title>
+<meta name="description" content="SOF203 Fundamentals of Network Technology - Bilingual Chinese-English Final Exam Review Guide">
+<style>
+:root{--bg:#f8f9fa;--surface:#fff;--text:#1a1a2e;--text2:#64748b;--primary:#2563eb;--primary2:#1d4ed8;--accent:#7c3aed;--border:#e2e8f0;--shadow:0 1px 3px rgba(0,0,0,.08);--code-bg:#f1f5f9;--success:#059669;--warn:#d97706;--sidebar-bg:#1e293b;--sidebar-text:#cbd5e1;--sidebar-active:#3b82f6;--tooltip-bg:#1e293b;--tooltip-text:#f1f5f9;--card-radius:12px;--recite-bg:#eff6ff;--understand-bg:#fffbeb;--hero-bg:linear-gradient(135deg,#1e293b 0%,#2563eb 100%)}
+[data-theme="dark"]{--bg:#0f172a;--surface:#1e293b;--text:#e2e8f0;--text2:#94a3b8;--border:#334155;--shadow:0 1px 3px rgba(0,0,0,.3);--code-bg:#0f172a;--recite-bg:#1e3a5f;--understand-bg:#3d3100}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.75;display:flex;min-height:100vh}
+a{color:var(--primary);text-decoration:none}
+.sidebar{width:280px;min-width:280px;background:var(--sidebar-bg);color:var(--sidebar-text);position:fixed;top:0;left:0;height:100vh;overflow-y:auto;z-index:100;transition:transform .3s}
+.sidebar-header{padding:20px 20px 16px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:8px}
+.sidebar-header h1{font-size:1.2em;color:#fff;margin-bottom:4px}
+.sidebar-header .sub{font-size:.75em;color:#94a3b8}
+.sidebar-nav{list-style:none;padding:0 12px 40px}
+.sidebar-nav li{margin:2px 0}
+.sidebar-nav a{display:block;padding:7px 14px;color:var(--sidebar-text);text-decoration:none;border-radius:8px;font-size:.84em;transition:all .2s}
+.sidebar-nav a:hover,.sidebar-nav a.active{background:var(--sidebar-active);color:#fff}
+.main{margin-left:280px;flex:1;padding:0;max-width:1100px}
+.hero{background:var(--hero-bg);color:#fff;padding:40px 48px 32px}
+.hero h1{font-size:1.8em;margin-bottom:8px}
+.hero p{opacity:.85;font-size:1em;max-width:700px}
+.hero .badges{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.hero .badge{background:rgba(255,255,255,.15);padding:4px 12px;border-radius:20px;font-size:.78em}
+.topbar{position:sticky;top:0;z-index:50;display:flex;justify-content:flex-end;align-items:center;gap:10px;padding:10px 40px;background:var(--surface);border-bottom:1px solid var(--border);flex-wrap:wrap}
+.topbar button,.topbar select{padding:7px 14px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);cursor:pointer;font-size:.84em;transition:all .2s}
+.topbar button:hover{background:var(--primary);color:#fff;border-color:var(--primary)}
+.topbar button.btn-active{background:var(--primary);color:#fff;border-color:var(--primary)}
+#searchBox{padding:7px 14px;border:1px solid var(--border);border-radius:8px;background:var(--surface);color:var(--text);font-size:.84em;width:200px;transition:width .3s}
+#searchBox:focus{width:280px;outline:2px solid var(--primary);outline-offset:-1px}
+.content-area{padding:20px 40px 60px}
+.topic-section{background:var(--surface);border-radius:var(--card-radius);padding:28px 36px;margin-bottom:20px;box-shadow:var(--shadow);border:1px solid var(--border);transition:box-shadow .2s}
+.topic-section:hover{box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.topic-title{font-size:1.3em;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--primary);display:flex;flex-direction:column;gap:4px;color:var(--primary2)}
+.topic-title .cn-text{font-size:.75em;color:var(--text2);font-weight:400}
+.sub-heading{font-size:1.05em;color:var(--accent);margin:20px 0 10px;padding-left:14px;border-left:3px solid var(--accent)}
+.sub-sub-heading{font-size:.95em;color:var(--text);margin:14px 0 8px;font-weight:600}
+.content-p{margin:8px 0;padding:4px 0}
+.en-recite{background:var(--recite-bg);padding:10px 16px;border-radius:8px;border-left:3px solid var(--primary);margin:12px 0}
+.cn-understand{background:var(--understand-bg);padding:10px 16px;border-radius:8px;border-left:3px solid var(--warn);margin:12px 0}
+.source-note{font-size:.78em;color:var(--text2);font-style:italic;padding:8px 0 0;margin:6px 0 18px;border-top:1px dashed var(--border)}
+.glossary-term{color:var(--primary);cursor:help;border-bottom:1px dashed var(--primary);position:relative;font-weight:500}
+.glossary-term:hover::after{content:attr(data-tip);position:absolute;bottom:130%;left:50%;transform:translateX(-50%);background:var(--tooltip-bg);color:var(--tooltip-text);padding:6px 12px;border-radius:6px;font-size:.8em;white-space:nowrap;z-index:100;pointer-events:none;font-weight:400;max-width:350px;white-space:normal;text-align:center}
+.diagram-box{background:var(--code-bg);border-radius:8px;padding:16px;margin:12px 0;text-align:center;overflow-x:auto}
+.diagram-box svg{max-width:100%;height:auto}
+/* Layer table */
+.layer-table{width:100%;border-collapse:collapse;font-size:.85em;margin:8px 0}
+.layer-table th{background:var(--primary);color:#fff;padding:8px 12px;text-align:left}
+.layer-table td{padding:8px 12px;border-bottom:1px solid var(--border)}
+.layer-table tr:nth-child(even){background:var(--code-bg)}
+.layer-table tr:hover{background:var(--recite-bg)}
+.nav-toggle{display:none;position:fixed;top:12px;left:12px;z-index:200;background:var(--primary);color:#fff;border:none;border-radius:8px;padding:8px 14px;font-size:1.2em;cursor:pointer}
+@media(max-width:768px){.sidebar{transform:translateX(-100%)}.sidebar.open{transform:translateX(0)}.main{margin-left:0}.hero{padding:28px 20px}.hero h1{font-size:1.3em}.topbar{padding:10px 16px}.content-area{padding:16px}.topic-section{padding:20px 16px}.topic-title{font-size:1.1em}.nav-toggle{display:block}#searchBox{width:130px}#searchBox:focus{width:170px}}
+@media(max-width:480px){.hero h1{font-size:1.1em}.hero .badges{display:none}}
+@keyframes fadeSlideIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.topic-section{animation:fadeSlideIn .35s ease}
+.highlight{background:#fde047;color:#000;padding:0 2px;border-radius:3px}
+[data-theme="dark"] .highlight{background:#854d0e;color:#fef3c7}
+@media print{.sidebar,.topbar,.nav-toggle,.hero{display:none!important}.main{margin:0}.content-area{padding:0}.topic-section{break-inside:avoid;box-shadow:none;border:1px solid #ddd}}
+
+</style>
+</head>
+<body data-theme="light">
+
+<button class="nav-toggle" onclick="toggleSidebar()" aria-label="Menu">&#9776;</button>
+
+<nav class="sidebar" id="sidebar">
+<div class="sidebar-header">
+<h1>&#127760; SOF203 &#24635;&#22797;&#20064;</h1>
+<div class="sub">Computer Networks &middot; Bilingual</div>
+</div>
+<ul class="sidebar-nav">
+<li><a href="#sec0" onclick="navigateTo('sec0')">📖 How to Use This Guide / 使用方法与重点地图</a></li>
+<li><a href="#sec1" onclick="navigateTo('sec1')">1. Types of Networks by Coverage / 按覆盖范围划分网络</a></li>
+<li><a href="#sec2" onclick="navigateTo('sec2')">2. Layered Models and Responsibilities / 分层模型与各层职责</a></li>
+<li><a href="#sec3" onclick="navigateTo('sec3')">3. Encapsulation and Decapsulation / 封装与解封装</a></li>
+<li><a href="#sec4" onclick="navigateTo('sec4')">4. Multiplexing: FDM and TDM / 复用：频分与时分</a></li>
+<li><a href="#sec5" onclick="navigateTo('sec5')">5. Simplex, Half-Duplex and Full-Duplex / 单工、半双工与全双工</a></li>
+<li><a href="#sec6" onclick="navigateTo('sec6')">6. Circuit Switching vs Packet Switching / 电路交换与分组交换</a></li>
+<li><a href="#sec7" onclick="navigateTo('sec7')">7. Four Sources of Packet Delay / 分组的四类时延</a></li>
+<li><a href="#sec8" onclick="navigateTo('sec8')">8. ARP and Packet-Trace Analysis / ARP 与抓包分析</a></li>
+<li><a href="#sec9" onclick="navigateTo('sec9')">9. Learning Switch: Self-Learning and Forwarding / 学习型交换机</a></li>
+<li><a href="#sec10" onclick="navigateTo('sec10')">10. Active and Passive Scanning in WLAN / WLAN 主动与被动扫描</a></li>
+<li><a href="#sec11" onclick="navigateTo('sec11')">11. Subnetting / 子网划分</a></li>
+<li><a href="#sec12" onclick="navigateTo('sec12')">12. Dijkstra&#x27;s Link-State Algorithm / Dijkstra 链路状态算法</a></li>
+<li><a href="#sec13" onclick="navigateTo('sec13')">13. Distance-Vector Routing / 距离向量路由</a></li>
+<li><a href="#sec14" onclick="navigateTo('sec14')">14. Identifying IP and MAC Addresses Along a Path / 路径中的 IP 与 MAC</a></li>
+<li><a href="#sec15" onclick="navigateTo('sec15')">15. TCP Sequence/Acknowledgment and Reliable Transfer / TCP 序号、确认号与可靠传输</a></li>
+<li><a href="#sec16" onclick="navigateTo('sec16')">16. HTTP Request and Response Analysis / HTTP 请求与响应报文分析</a></li>
+<li><a href="#sec17" onclick="navigateTo('sec17')">Appendix A. Final Revision Questions - Answer Key / 复习题答案</a></li>
+<li><a href="#sec18" onclick="navigateTo('sec18')">Appendix B. Last-Minute English Recitation / 考前英文速背</a></li>
+<li><a href="#sec19" onclick="navigateTo('sec19')">Appendix C. Source Map / 课件页码索引</a></li>
+</ul>
+</nav>
+
+<main class="main">
+<div class="hero">
+<h1>&#127891; SOF203 Final Exam &mdash; Bilingual Master Revision Guide</h1>
+<p>Fundamentals of Network Technology &middot; Chapters 1-6 &middot; Xiamen University Malaysia</p>
+<div class="badges">
+<span class="badge">&#128218; 17+ Topics</span>
+<span class="badge">&#127758; CN+EN Bilingual</span>
+<span class="badge">&#128269; Searchable (Ctrl+K)</span>
+<span class="badge">&#128736; SVG Diagrams</span>
+<span class="badge">&#128161; Glossary Tooltips</span>
+</div>
+</div>
+
+<div class="topbar">
+<input type="text" id="searchBox" placeholder="&#128269; Search (Ctrl+K)..." oninput="doSearch()" aria-label="Search topics">
+<button id="btnLang" onclick="toggleLang()" class="btn-active">CN+EN</button>
+<button id="btnDetail" onclick="toggleDetail()">Summary</button>
+<button onclick="toggleTheme()" title="Toggle dark/light theme">&#127763;</button>
+</div>
+
+<div class="content-area">
+<section id="sec0" class="topic-section">
+<h2 class="topic-title"><span class="en-text">How to Use This Guide</span>
+ <span class="cn-text">使用方法与重点地图</span>
+</h2>
+<h3 class="sub-heading">Revision focus map / 老师划定的考试重点</h3>
+<h3 class="sub-heading">Answering conventions / 作答约定</h3>
+<p class="content-p">Definitions are written as complete English sentences because the exam has no MCQ and requires explanation.</p>
+<p class="content-p">Formulas always include units. Convert bytes to bits, kilometres to metres, and Mbps to bps before substitution.</p>
+<p class="content-p">For protocol traces, state both the field value and the reason it has that value.</p>
+<p class="content-p">For routing and subnetting, show intermediate tables or steps; a final number alone is not enough.</p>
+<div class="source-note">课件来源 / Slide source: SOF203-Revision.pdf, PDF pp. 2-7.</div>
+</section>
+<section id="sec1" class="topic-section">
+<h2 class="topic-title"><span class="en-text">1. Types of Networks by Coverage</span>
+ <span class="cn-text">按覆盖范围划分网络</span>
+</h2>
+<p class="content-p en-recite">English (memorize) / 英文背诵：Networks can be classified by the geographic area they cover. The usual order from the smallest to the largest is <span class="glossary-term" data-tip="Personal Area Network - covers vicinity of one person (e.g., Bluetooth)">PAN</span>, <span class="glossary-term" data-tip="Local Area Network - covers a building or office (e.g., switched Ethernet, Wi-Fi)">LAN</span>, <span class="glossary-term" data-tip="Metropolitan Area Network - covers a city (e.g., cable TV network)">MAN</span>, <span class="glossary-term" data-tip="Wide Area Network - covers a country or large region (e.g., ISP network)">WAN</span>, and the Internet.</p>
+<p class="content-p cn-understand">中文理解：网络可按覆盖的地理范围分类。由小到大的常见顺序是 <span class="glossary-term" data-tip="Personal Area Network - covers vicinity of one person (e.g., Bluetooth)">PAN</span>、<span class="glossary-term" data-tip="Local Area Network - covers a building or office (e.g., switched Ethernet, Wi-Fi)">LAN</span>、<span class="glossary-term" data-tip="Metropolitan Area Network - covers a city (e.g., cable TV network)">MAN</span>、<span class="glossary-term" data-tip="Wide Area Network - covers a country or large region (e.g., ISP network)">WAN</span>，以及覆盖全球的 Internet。</p>
+<div class="source-note">课件来源 / Slide source: SOF203-Chap1-Introduction.pdf, PDF pp. 5-10.</div>
+</section>
+<section id="sec2" class="topic-section">
+<h2 class="topic-title"><span class="en-text">2. Layered Models and Responsibilities</span>
+ <span class="cn-text">分层模型与各层职责</span>
+</h2>
+<div class="diagram-box"><svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg"><style>.lb{fill:#fff;stroke:#cbd5e1;stroke-width:1.5}.lt{fill:#1e293b;font-size:12px;font-family:sans-serif;text-anchor:middle}.l5{fill:#dbeafe}.l4{fill:#c7d2fe}.l3{fill:#ddd6fe}.l2{fill:#fce7f3}.l1{fill:#fed7aa}.lo{fill:#fef3c7}.lp{fill:#e0e7ff}</style><text x="175" y="20" class="lt" font-weight="bold">Internet 5-Layer Model</text><rect x="40" y="30" width="270" height="40" rx="4" class="l5"/><text x="175" y="55" class="lt">5. Application Layer</text><rect x="40" y="72" width="270" height="40" rx="4" class="l4"/><text x="175" y="97" class="lt">4. Transport Layer</text><rect x="40" y="114" width="270" height="40" rx="4" class="l3"/><text x="175" y="139" class="lt">3. Network Layer</text><rect x="40" y="156" width="270" height="40" rx="4" class="l2"/><text x="175" y="181" class="lt">2. Link Layer</text><rect x="40" y="198" width="270" height="40" rx="4" class="l1"/><text x="175" y="223" class="lt">1. Physical Layer</text><text x="525" y="20" class="lt" font-weight="bold">OSI 7-Layer Model</text><rect x="390" y="30" width="270" height="35" rx="4" class="l5"/><text x="525" y="52" class="lt">7. Application</text><rect x="390" y="68" width="270" height="35" rx="4" class="lp"/><text x="525" y="90" class="lt">6. Presentation</text><rect x="390" y="106" width="270" height="35" rx="4" class="lo"/><text x="525" y="128" class="lt">5. Session</text><rect x="390" y="144" width="270" height="35" rx="4" class="l4"/><text x="525" y="166" class="lt">4. Transport</text><rect x="390" y="182" width="270" height="35" rx="4" class="l3"/><text x="525" y="204" class="lt">3. Network</text><rect x="390" y="220" width="270" height="35" rx="4" class="l2"/><text x="525" y="242" class="lt">2. Data Link</text><rect x="390" y="258" width="270" height="35" rx="4" class="l1"/><text x="525" y="280" class="lt">1. Physical</text><line x1="310" y1="150" x2="390" y2="150" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6,3"/><text x="350" y="142" class="lt" font-size="10">Pres+Sess</text><text x="350" y="155" class="lt" font-size="10">-&gt; App</text><text x="175" y="270" class="lt" font-size="10">Message|Segment|Datagram|Frame|Bits</text><text x="525" y="310" class="lt" font-size="10">Data|Segment|Packet|Frame|Bits</text><text x="175" y="285" class="lt" font-size="9" fill="#64748b">HTTP,SMTP|TCP,UDP|IP,ICMP|Eth,WiFi|Cu,Fibre</text></svg></div>
+<h3 class="sub-heading">Why layering? / 为什么要分层</h3>
+<p class="content-p en-recite">English (memorize) / 英文背诵：Layering gives an explicit structure for identifying the pieces of a complex network system and their relationships. Modularization simplifies discussion, maintenance, and updating because a layer can change its implementation while keeping the same service interface to other layers.</p>
+<p class="content-p cn-understand">中文理解：分层为复杂网络系统提供明确结构，使各组成部分及其关系可被识别。模块化便于讨论、维护和升级；只要层间服务接口不变，某一层的内部实现可以改变而不影响其他层。</p>
+<h3 class="sub-heading">Names of the 5-layer and 7-layer models / 五层与七层名称</h3>
+<p class="content-p en-recite">English (memorize) / 英文背诵：The Internet model is a descriptive five-layer model used in practice. The ISO/<span class="glossary-term" data-tip="Open Systems Interconnection - 7-layer reference model (ISO)">OSI</span> model is a prescriptive seven-layer model. The <span class="glossary-term" data-tip="Open Systems Interconnection - 7-layer reference model (ISO)">OSI</span> presentation and session functions are normally implemented inside the application layer of the Internet stack when needed.</p>
+<p class="content-p cn-understand">中文理解：Internet 模型是实践中使用的描述性五层模型；ISO/<span class="glossary-term" data-tip="Open Systems Interconnection - 7-layer reference model (ISO)">OSI</span> 是规范性的七层模型。<span class="glossary-term" data-tip="Open Systems Interconnection - 7-layer reference model (ISO)">OSI</span> 的表示层和会话层功能，在 Internet 协议栈中如有需要通常由应用层实现。</p>
+<h3 class="sub-heading">Responsibilities of each Internet layer / Internet 五层职责</h3>
+<h4 class="sub-sub-heading">The two extra <span class="glossary-term" data-tip="Open Systems Interconnection - 7-layer reference model (ISO)">OSI</span> layers / <span class="glossary-term" data-tip="Open Systems Interconnection - 7-layer reference model (ISO)">OSI</span> 多出的两层</h4>
+<p class="content-p">Presentation layer / 表示层: enables applications to interpret data; may perform translation, encryption/decryption, compression/decompression, and machine-specific representation.</p>
+<p class="content-p">Session layer / 会话层: manages dialog sessions and provides synchronization, checkpoints, and recovery of an interrupted data exchange.</p>
+<div class="source-note">课件来源 / Slide source: SOF203-Chap1-Introduction.pdf, PDF pp. 44-52.</div>
+<table class="layer-table"><thead><tr><th>Layer</th><th>PDU</th><th>Core Responsibilities</th><th>Scope</th></tr></thead><tbody><tr><td><strong>5 App</strong></td><td>Message</td><td>Message format/meaning; HTTP,SMTP,FTP</td><td>App-to-app</td></tr><tr><td><strong>4 Transport</strong></td><td>Segment</td><td>Process-to-process; ports; TCP/UDP; reliability/flow/congestion control</td><td>Process-to-process</td></tr><tr><td><strong>3 Network</strong></td><td>Datagram</td><td>Host-to-host; IP addressing; routing & forwarding</td><td>Host-to-host (across nets)</td></tr><tr><td><strong>2 Link</strong></td><td>Frame</td><td>Hop-to-hop; MAC addresses; medium access; Ethernet/WiFi</td><td>Hop-to-hop</td></tr><tr><td><strong>1 Physical</strong></td><td>Bits</td><td>Raw bit transmission; signals; media (copper/fibre/radio)</td><td>Across physical medium</td></tr></tbody></table>
+</section>
+<section id="sec3" class="topic-section">
+<h2 class="topic-title"><span class="en-text">3. Encapsulation and Decapsulation</span>
+ <span class="cn-text">封装与解封装</span>
+</h2>
+<div class="diagram-box"><svg viewBox="0 0 700 160" xmlns="http://www.w3.org/2000/svg"><style>.eb{fill:#fff;stroke:#94a3b8;stroke-width:1.2}.et{fill:#334155;font-size:11px;font-family:sans-serif;text-anchor:middle}.eh{fill:#2563eb;font-size:10px;font-family:sans-serif;text-anchor:middle}</style><text x="350" y="16" class="et" font-weight="bold">Sender (Encapsulation) / Receiver (Decapsulation)</text><rect x="20" y="28" width="300" height="28" rx="3" fill="#e0f2fe" stroke="#7dd3fc"/><text x="170" y="47" class="eh">Application: Message M</text><rect x="20" y="58" width="300" height="28" rx="3" fill="#bfdbfe" stroke="#93c5fd"/><text x="170" y="77" class="eh">Transport: [TCP Hdr | M] = Segment</text><rect x="20" y="88" width="300" height="28" rx="3" fill="#a5b4fc" stroke="#818cf8"/><text x="170" y="107" class="eh">Network: [IP Hdr | TCP Hdr | M] = Datagram</text><rect x="20" y="118" width="300" height="28" rx="3" fill="#f9a8d4" stroke="#f472b6"/><text x="170" y="137" class="eh">Link: [Eth Hdr|IP Hdr|TCP Hdr|M|Eth Trl] = Frame</text><rect x="370" y="28" width="300" height="28" rx="3" fill="#e0f2fe" stroke="#7dd3fc"/><text x="520" y="47" class="eh">App: Message M extracted</text><rect x="370" y="58" width="300" height="28" rx="3" fill="#bfdbfe" stroke="#93c5fd"/><text x="520" y="77" class="eh">Transport: remove TCP header</text><rect x="370" y="88" width="300" height="28" rx="3" fill="#a5b4fc" stroke="#818cf8"/><text x="520" y="107" class="eh">Network: remove IP header</text><rect x="370" y="118" width="300" height="28" rx="3" fill="#f9a8d4" stroke="#f472b6"/><text x="520" y="137" class="eh">Link: remove Eth header/trailer</text></svg></div>
+<p class="content-p en-recite">English (memorize) / 英文背诵：Encapsulation is the downward process in which each protocol layer adds its own control information, usually a header, to the data received from the layer above. Decapsulation is the upward process in which each receiving layer interprets and removes the corresponding control information before passing the payload upward.</p>
+<p class="content-p cn-understand">中文理解：封装是数据向下经过协议栈时，每层向上层交付的数据添加本层控制信息（通常是首部）的过程。解封装是接收端数据向上经过协议栈时，每层解释并移除相应控制信息，再把有效载荷交给上层的过程。</p>
+<h3 class="sub-heading">What happens at intermediate devices? / 中间设备怎样处理</h3>
+<p class="content-p">A switch normally examines the link-layer header and forwards a frame using <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> addresses. It does not remove the end-to-end transport information.</p>
+<p class="content-p">A router removes the incoming link-layer frame, examines the <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> datagram, selects an outgoing interface, and encapsulates the same <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> datagram in a new link-layer frame for the next hop.</p>
+<p class="content-p">Therefore, source and destination <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> addresses normally remain end-to-end, while source and destination <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> addresses change at every routed hop. <span class="glossary-term" data-tip="Time To Live - limits packet lifetime, decremented at each router">TTL</span> is updated by routers; <span class="glossary-term" data-tip="Network Address Translation - rewrites <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> addresses at router">NAT</span> is a special case that can rewrite <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> addresses.</p>
+<div class="source-note">课件来源 / Slide source: SOF203-Chap1-Introduction.pdf, PDF pp. 53-60; SOF203-Chap3-Link Layer - Part 1.pdf, PDF pp. 21-26.</div>
+</section>
+<section id="sec4" class="topic-section">
+<h2 class="topic-title"><span class="en-text">4. Multiplexing: FDM and TDM</span>
+ <span class="cn-text">复用：频分与时分</span>
+</h2>
+<p class="content-p en-recite">English (memorize) / 英文背诵：Multiplexing allows multiple signals to travel simultaneously over one physical medium by dividing it into logical subchannels. A multiplexer combines input channels at the sender, and a demultiplexer separates them at the receiver.</p>
+<p class="content-p cn-understand">中文理解：复用把一条物理介质划分为多个逻辑子信道，使多个信号共享介质。发送端的复用器把多个输入合并，接收端的解复用器再把它们分离。</p>
+<h3 class="sub-heading">Frequency Division Multiplexing (<span class="glossary-term" data-tip="Frequency Division Multiplexing - divides frequency spectrum into bands">FDM</span>) / 频分复用</h3>
+<p class="content-p en-recite">English (memorize) / 英文背诵：<span class="glossary-term" data-tip="Frequency Division Multiplexing - divides frequency spectrum into bands">FDM</span> divides the frequency spectrum of a link into separate frequency bands. Each connection is assigned one band and can transmit at the same time as the others. It is used in broadcast radio and cable television.</p>
+<p class="content-p cn-understand">中文理解：<span class="glossary-term" data-tip="Frequency Division Multiplexing - divides frequency spectrum into bands">FDM</span> 把链路的频谱划分为互不重叠的频带。每条连接占用一个频带，因此各连接可同时传输。广播电台和有线电视使用这种方式。</p>
+<h3 class="sub-heading">Time Division Multiplexing (<span class="glossary-term" data-tip="Time Division Multiplexing - divides time into slots">TDM</span>) / 时分复用</h3>
+<p class="content-p en-recite">English (memorize) / 英文背诵：<span class="glossary-term" data-tip="Time Division Multiplexing - divides time into slots">TDM</span> divides transmission time into slots. Senders take turns, usually in round-robin order, and each sender transmits during its assigned slot.</p>
+<p class="content-p cn-understand">中文理解：<span class="glossary-term" data-tip="Time Division Multiplexing - divides time into slots">TDM</span> 把传输时间划分为时隙。发送者按顺序轮流使用介质，通常采用轮询方式，每个发送者在分配给自己的时隙中传输。</p>
+<div class="source-note">课件来源 / Slide source: SOF203-Chap2-DataTransmission-v2.pdf, PDF pp. 6-8.</div>
+</section>
+<section id="sec5" class="topic-section">
+<h2 class="topic-title"><span class="en-text">5. Simplex, Half-Duplex and Full-Duplex</span>
+ <span class="cn-text">单工、半双工与全双工</span>
+</h2>
+<div class="source-note">课件来源 / Slide source: SOF203-Chap2-DataTransmission-v2.pdf, PDF pp. 10-15.</div>
+</section>
+<section id="sec6" class="topic-section">
+<h2 class="topic-title"><span class="en-text">6. Circuit Switching vs Packet Switching</span>
+ <span class="cn-text">电路交换与分组交换</span>
+</h2>
+<div class="diagram-box"><svg viewBox="0 0 700 180" xmlns="http://www.w3.org/2000/svg"><style>.st{font-size:11px;font-family:sans-serif;text-anchor:middle}.sl{font-size:9px;font-family:sans-serif;fill:#64748b;text-anchor:middle}</style><text x="175" y="16" class="st" font-weight="bold">Circuit Switching</text><rect x="30" y="28" width="50" height="24" rx="4" fill="#dbeafe" stroke="#60a5fa"/><text x="55" y="44" class="sl">A</text><rect x="120" y="28" width="50" height="24" rx="4" fill="#dbeafe" stroke="#60a5fa"/><text x="145" y="44" class="sl">R1</text><rect x="210" y="28" width="50" height="24" rx="4" fill="#dbeafe" stroke="#60a5fa"/><text x="235" y="44" class="sl">R2</text><rect x="300" y="28" width="50" height="24" rx="4" fill="#dbeafe" stroke="#60a5fa"/><text x="325" y="44" class="sl">B</text><line x1="80" y1="40" x2="120" y2="40" stroke="#2563eb" stroke-width="2"/><line x1="170" y1="40" x2="210" y2="40" stroke="#2563eb" stroke-width="2"/><line x1="260" y1="40" x2="300" y2="40" stroke="#2563eb" stroke-width="2"/><text x="190" y="70" class="sl">Dedicated path; 3 phases (setup-use-teardown)</text><text x="525" y="16" class="st" font-weight="bold">Packet Switching</text><rect x="380" y="28" width="50" height="24" rx="4" fill="#fef3c7" stroke="#f59e0b"/><text x="405" y="44" class="sl">A</text><rect x="470" y="28" width="50" height="24" rx="4" fill="#fef3c7" stroke="#f59e0b"/><text x="495" y="44" class="sl">R1</text><rect x="560" y="28" width="50" height="24" rx="4" fill="#fef3c7" stroke="#f59e0b"/><text x="585" y="44" class="sl">R2</text><rect x="650" y="28" width="50" height="24" rx="4" fill="#fef3c7" stroke="#f59e0b"/><text x="675" y="44" class="sl">B</text><rect x="390" y="60" width="20" height="14" rx="2" fill="#f59e0b"/><text x="400" y="71" class="sl" fill="#fff">1</text><rect x="480" y="60" width="20" height="14" rx="2" fill="#f59e0b"/><text x="490" y="71" class="sl" fill="#fff">1</text><rect x="585" y="75" width="20" height="14" rx="2" fill="#f59e0b"/><text x="595" y="86" class="sl" fill="#fff">1</text><rect x="390" y="90" width="20" height="14" rx="2" fill="#d97706"/><text x="400" y="101" class="sl" fill="#fff">2</text><rect x="480" y="90" width="20" height="14" rx="2" fill="#d97706"/><text x="490" y="101" class="sl" fill="#fff">2</text><rect x="570" y="105" width="20" height="14" rx="2" fill="#d97706"/><text x="580" y="116" class="sl" fill="#fff">2</text><rect x="460" y="130" width="70" height="22" rx="4" fill="#fef2f2" stroke="#f87171" stroke-width="1"/><text x="495" y="145" class="sl" fill="#dc2626">Queue (variable delay)</text></svg></div>
+<h3 class="sub-heading">Circuit switching / 电路交换</h3>
+<p class="content-p en-recite">English (memorize) / 英文背诵：Circuit switching establishes a dedicated end-to-end path before data transfer. Communication has three stages: circuit setup, circuit use, and circuit termination. Once established, its performance is similar to an isolated physical path because resources are reserved for the user.</p>
+<p class="content-p cn-understand">中文理解：电路交换在传输数据前建立专用端到端路径，过程分为建立电路、使用电路和终止电路三个阶段。由于资源为该用户预留，建立后性能类似独立物理通路。</p>
+<h3 class="sub-heading">Packet switching / 分组交换</h3>
+<p class="content-p en-recite">English (memorize) / 英文背诵：Packet switching divides data into packets and shares links among users. No dedicated circuit setup is required; packets are stored and forwarded by routers. Sharing improves resource utilization, but packets may experience variable queueing delay and may be dropped when buffers are full.</p>
+<p class="content-p cn-understand">中文理解：分组交换把数据划分为分组，让多个用户共享链路。它不需要建立专用电路，路由器采用存储转发。共享提高资源利用率，但分组会经历可变的排队时延，缓存满时还可能丢失。</p>
+<div class="source-note">课件来源 / Slide source: SOF203-Chap2-DataTransmission-v2.pdf, PDF pp. 37-42.</div>
+</section>
+<section id="sec7" class="topic-section">
+<h2 class="topic-title"><span class="en-text">7. Four Sources of Packet Delay</span>
+ <span class="cn-text">分组的四类时延</span>
+</h2>
+<div class="diagram-box"><svg viewBox="0 0 700 170" xmlns="http://www.w3.org/2000/svg"><style>.dt{font-size:11px;font-family:sans-serif;text-anchor:middle}.dl{font-size:9px;font-family:sans-serif;fill:#64748b;text-anchor:middle}</style><text x="350" y="16" class="dt" font-weight="bold">d_nodal = d_proc + d_queue + d_trans + d_prop</text><rect x="15" y="30" width="150" height="55" rx="6" fill="#dbeafe" stroke="#60a5fa"/><text x="90" y="50" class="dt">d_proc</text><text x="90" y="65" class="dl">Check header, bit errors</text><text x="90" y="78" class="dl">~microseconds</text><rect x="180" y="30" width="150" height="55" rx="6" fill="#fef3c7" stroke="#f59e0b"/><text x="255" y="50" class="dt">d_queue</text><text x="255" y="65" class="dl">Wait in output buffer</text><text x="255" y="78" class="dl">Variable (congestion)</text><rect x="345" y="30" width="150" height="55" rx="6" fill="#fce7f3" stroke="#ec4899"/><text x="420" y="50" class="dt">d_trans</text><text x="420" y="65" class="dl">Push bits onto link</text><text x="420" y="78" class="dl">d_trans = L / R</text><rect x="510" y="30" width="150" height="55" rx="6" fill="#d1fae5" stroke="#34d399"/><text x="585" y="50" class="dt">d_prop</text><text x="585" y="65" class="dl">Travel across medium</text><text x="585" y="78" class="dl">d_prop = d / s</text><text x="170" y="58" font-size="14">+</text><text x="335" y="58" font-size="14">+</text><text x="500" y="58" font-size="14">+</text><text x="350" y="118" class="dt" fill="#dc2626">d_trans depends on L,R | d_prop depends on d,s</text><rect x="130" y="135" width="440" height="26" rx="4" fill="#f1f5f9" stroke="#94a3b8"/><text x="350" y="153" class="dl">Router: input -> switching fabric -> output buffer (where queueing happens)</text></svg></div>
+<p class="content-p en-recite">English (memorize) / 英文背诵：A packet can be delayed by nodal processing, queueing, transmission, and propagation. These delays have different causes and must not be confused.</p>
+<p class="content-p cn-understand">中文理解：分组可能经历处理、排队、传输和传播四类时延。四者成因不同，不能混淆。</p>
+<h3 class="sub-heading">Transmission delay and propagation delay are very different / 传输与传播时延的本质区别</h3>
+<p class="content-p en-recite">English (memorize) / 英文背诵：Transmission delay is the time to put the bits onto the link, whereas propagation delay is the time for a bit already on the link to travel to the other end. A long packet increases transmission delay; a long cable increases propagation delay.</p>
+<p class="content-p cn-understand">中文理解：传输时延是“把比特送上链路”的时间；传播时延是“已经在链路上的比特走到另一端”的时间。分组越长，传输时延越大；链路越长，传播时延越大。</p>
+<h3 class="sub-heading">Unit conversion checklist / 单位换算</h3>
+<p class="content-p">Packet length: bytes x 8 = bits. / 分组长度：字节乘 8 变成比特。</p>
+<p class="content-p">Distance: kilometres x 1,000 = metres. / 距离：千米乘 1,000 变成米。</p>
+<p class="content-p">Rate: 1 Mbps = 10^6 bps; 1 Gbps = 10^9 bps. / 速率使用十进制单位。</p>
+<p class="content-p">Time: 1 s = 1,000 ms = 10^6 microseconds. / 秒、毫秒和微秒要统一。</p>
+<h3 class="sub-heading">Worked exam example / 复习题例题</h3>
+<p class="content-p">A 2,000-byte packet travels over a 2,500 km link. Propagation speed is 2.5 x 10^8 m/s and transmission rate is 100 Mbps.</p>
+<p class="content-p">Convert: L = 2,000 x 8 = 16,000 bits; d = 2,500 x 1,000 = 2.5 x 10^6 m; R = 100 x 10^6 bps.</p>
+<p class="content-p">Propagation delay: d_prop = d/s = (2.5 x 10^6)/(2.5 x 10^8) = 0.01 s = 10 ms.</p>
+<p class="content-p">Transmission delay: d_trans = L/R = 16,000/(100 x 10^6) = 0.00016 s = 0.16 ms.</p>
+<div class="source-note">课件来源 / Slide source: SOF203-Chap2-DataTransmission-v2.pdf, PDF pp. 43-51; SOF203 Final Exam Revision Questions.pdf, Q3.</div>
+</section>
+<section id="sec8" class="topic-section">
+<h2 class="topic-title"><span class="en-text">8. ARP and Packet-Trace Analysis</span>
+ <span class="cn-text">ARP 与抓包分析</span>
+</h2>
+<div class="diagram-box"><svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg"><style>.at{fill:#334155;font-size:11px;font-family:sans-serif;text-anchor:middle}.am{fill:#475569;font-size:10px;font-family:sans-serif;text-anchor:middle}</style><text x="350" y="18" class="at" font-weight="bold">ARP Process: Same-LAN Resolution</text><rect x="40" y="40" width="120" height="50" rx="6" fill="#dbeafe" stroke="#60a5fa" stroke-width="1.5"/><text x="100" y="60" class="at" font-weight="bold">Host A</text><text x="100" y="75" class="am">10.0.0.1</text><text x="100" y="88" class="am" font-size="9">AA:BB:CC:DD:EE:01</text><rect x="230" y="45" width="240" height="40" rx="20" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" stroke-dasharray="5,3"/><text x="350" y="62" class="at">ARP Request (Broadcast)</text><text x="350" y="78" class="am" font-size="9">Who has 10.0.0.3? Tell 10.0.0.1</text><rect x="540" y="40" width="120" height="50" rx="6" fill="#d1fae5" stroke="#34d399" stroke-width="1.5"/><text x="600" y="60" class="at" font-weight="bold">Host B</text><text x="600" y="75" class="am">10.0.0.2</text><rect x="540" y="140" width="120" height="50" rx="6" fill="#fce7f3" stroke="#f472b6" stroke-width="1.5"/><text x="600" y="160" class="at" font-weight="bold">Host C (Target)</text><text x="600" y="175" class="am">10.0.0.3</text><text x="600" y="188" class="am" font-size="9">CC:DD:EE:FF:00:03</text><line x1="540" y1="165" x2="160" y2="65" stroke="#ec4899" stroke-width="1.5" marker-end="url(#arrowPink)"/><text x="350" y="120" class="at" fill="#ec4899">ARP Reply (Unicast)</text><text x="350" y="135" class="am" font-size="9" fill="#ec4899">I am 10.0.0.3, MAC: CC:DD:EE:FF:00:03</text><defs><marker id="arrowPink" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#ec4899"/></marker></defs></svg></div>
+<p class="content-p en-recite">English (memorize) / 英文背诵：The Address Resolution Protocol (<span class="glossary-term" data-tip="Address Resolution Protocol - maps IPv4 to <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address on same LAN">ARP</span>) maps a known IPv4 address to the <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address of an interface on the same <span class="glossary-term" data-tip="Local Area Network - covers a building or office (e.g., switched Ethernet, Wi-Fi)">LAN</span>. Each host or router maintains an <span class="glossary-term" data-tip="Address Resolution Protocol - maps IPv4 to <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address on same LAN">ARP</span> table containing <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span>-to-<span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> mappings and a <span class="glossary-term" data-tip="Time To Live - limits packet lifetime, decremented at each router">TTL</span>.</p>
+<p class="content-p cn-understand">中文理解：地址解析协议 <span class="glossary-term" data-tip="Address Resolution Protocol - maps IPv4 to <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address on same LAN">ARP</span> 把已知 IPv4 地址解析为同一 <span class="glossary-term" data-tip="Local Area Network - covers a building or office (e.g., switched Ethernet, Wi-Fi)">LAN</span> 上接口的 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> 地址。每台主机或路由器维护 <span class="glossary-term" data-tip="Address Resolution Protocol - maps IPv4 to <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address on same LAN">ARP</span> 表，其中包含 <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span>-<span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> 映射及其生存时间 <span class="glossary-term" data-tip="Time To Live - limits packet lifetime, decremented at each router">TTL</span>。</p>
+<h3 class="sub-heading">Same-<span class="glossary-term" data-tip="Local Area Network - covers a building or office (e.g., switched Ethernet, Wi-Fi)">LAN</span> request and reply / 同一 <span class="glossary-term" data-tip="Local Area Network - covers a building or office (e.g., switched Ethernet, Wi-Fi)">LAN</span> 内的请求与应答</h3>
+<p class="content-p">The sender checks its <span class="glossary-term" data-tip="Address Resolution Protocol - maps IPv4 to <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address on same LAN">ARP</span> cache. If a valid mapping exists, it uses that <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address directly. / 发送者先查 <span class="glossary-term" data-tip="Address Resolution Protocol - maps IPv4 to <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address on same LAN">ARP</span> 缓存。</p>
+<p class="content-p">If the mapping is missing, the sender broadcasts an <span class="glossary-term" data-tip="Address Resolution Protocol - maps IPv4 to <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address on same LAN">ARP</span> Request in an Ethernet frame whose destination <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> is FF-FF-FF-FF-FF-FF. The request asks: Who has target <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span>? / 若无映射，广播 <span class="glossary-term" data-tip="Address Resolution Protocol - maps IPv4 to <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address on same LAN">ARP</span> Request。</p>
+<p class="content-p">Every node on the <span class="glossary-term" data-tip="Local Area Network - covers a building or office (e.g., switched Ethernet, Wi-Fi)">LAN</span> receives the request, but only the interface whose <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> matches the target <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> replies. / <span class="glossary-term" data-tip="Local Area Network - covers a building or office (e.g., switched Ethernet, Wi-Fi)">LAN</span> 上所有节点收到请求，只有目标 <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> 的拥有者应答。</p>
+<p class="content-p">The target sends an <span class="glossary-term" data-tip="Address Resolution Protocol - maps IPv4 to <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address on same LAN">ARP</span> Reply by unicast to the requester's <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address, because the requester included its own <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> and <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> in the request. / 目标以单播把 <span class="glossary-term" data-tip="Address Resolution Protocol - maps IPv4 to <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address on same LAN">ARP</span> Reply 发回请求者。</p>
+<p class="content-p">The requester caches the mapping until it times out. <span class="glossary-term" data-tip="Address Resolution Protocol - maps IPv4 to <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address on same LAN">ARP</span> is plug-and-play and the table is soft state. / 请求者缓存映射，过期后删除。</p>
+<h3 class="sub-heading">Why broadcast request but unicast reply? / 为什么请求广播、应答单播</h3>
+<p class="content-p en-recite">English (memorize) / 英文背诵：The request must be broadcast because the sender does not yet know which <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address owns the target <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span>. The reply can be unicast because the target learned the requester's <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address from the request, and only that requester needs the answer.</p>
+<p class="content-p cn-understand">中文理解：请求必须广播，因为发送者还不知道目标 <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> 对应哪一个 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span>；应答可单播，因为目标已从请求中获知请求者的 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span>，而且只有请求者需要答案。</p>
+<h3 class="sub-heading">Wireshark checklist / 抓包字段检查表</h3>
+<div class="source-note">课件来源 / Slide source: SOF203-Chap3-Link Layer - Part 1.pdf, PDF pp. 12-20.</div>
+</section>
+<section id="sec9" class="topic-section">
+<h2 class="topic-title"><span class="en-text">9. Learning Switch: Self-Learning and Forwarding</span>
+ <span class="cn-text">学习型交换机</span>
+</h2>
+<p class="content-p en-recite">English (memorize) / 英文背诵：An Ethernet switch is a transparent link-layer device that stores and forwards frames. Its switch table maps a host <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address to an outgoing interface and normally includes an ageing time.</p>
+<p class="content-p cn-understand">中文理解：以太网交换机是透明的链路层存储转发设备。交换表把主机 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> 地址映射到输出接口，通常还包含老化时间。</p>
+<h3 class="sub-heading">Source learning / 源地址学习</h3>
+<p class="content-p en-recite">English (memorize) / 英文背诵：Whenever a frame arrives, the switch records or refreshes the mapping from the source <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address to the incoming interface. A switch learns from the source address, not from the destination address.</p>
+<p class="content-p cn-understand">中文理解：每当帧到达，交换机就记录或刷新“源 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> - 入接口”的映射。交换机从源地址学习，而不是从目的地址学习。</p>
+<h3 class="sub-heading">Destination lookup and action / 查目的地址并处理</h3>
+<p class="content-p">Record the source <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> and incoming interface. / 学习源 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> 与入接口。</p>
+<p class="content-p">Look up the destination <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> in the switch table. / 查询目的 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span>。</p>
+<p class="content-p">If the destination is known on a different interface, forward only on that interface. / 已知且在另一接口：定向转发。</p>
+<p class="content-p">If the destination is known on the same incoming interface, filter/drop the frame because the destination is already on that segment. / 已知且在同一入接口：过滤。</p>
+<p class="content-p">If the destination is unknown, or the frame is broadcast, flood it on every interface except the incoming interface. / 未知或广播：除入接口外泛洪。</p>
+<h3 class="sub-heading">Worked learning sequence / 复习题交换表过程</h3>
+<div class="source-note">课件来源 / Slide source: SOF203-Chap3-Link Layer - Part 1.pdf, PDF pp. 33-40; SOF203 Final Exam Revision Questions.pdf, Q6.</div>
+</section>
+<section id="sec10" class="topic-section">
+<h2 class="topic-title"><span class="en-text">10. Active and Passive Scanning in WLAN</span>
+ <span class="cn-text">WLAN 主动与被动扫描</span>
+</h2>
+<p class="content-p en-recite">English (memorize) / 英文背诵：Before a wireless station can exchange network-layer data through an access point (AP), it must discover and associate with an AP. The <span class="glossary-term" data-tip="Service Set Identifier - Wi-Fi network name">SSID</span> identifies the wireless network and is carried in management information such as beacon frames.</p>
+<p class="content-p cn-understand">中文理解：无线站点通过 AP 交换网络层数据前，必须先发现并关联某个 AP。<span class="glossary-term" data-tip="Service Set Identifier - Wi-Fi network name">SSID</span> 用来标识无线网络，并出现在 Beacon 等管理信息中。</p>
+<h3 class="sub-heading">Passive scanning / 被动扫描</h3>
+<p class="content-p">APs periodically transmit Beacon frames. / AP 周期性发送 Beacon。</p>
+<p class="content-p">The station listens without first transmitting and selects an AP. / 站点先监听，不主动发探测帧。</p>
+<p class="content-p">The station sends an Association Request to the selected AP. / 向选中的 AP 发送 Association Request。</p>
+<p class="content-p">The AP returns an Association Response. / AP 返回 Association Response。</p>
+<h3 class="sub-heading">Active scanning / 主动扫描</h3>
+<p class="content-p">The station broadcasts a Probe Request. / 站点广播 Probe Request。</p>
+<p class="content-p">Nearby APs return Probe Responses. / 附近 AP 返回 Probe Response。</p>
+<p class="content-p">The station selects an AP and sends an Association Request. / 站点选择 AP 并发送关联请求。</p>
+<p class="content-p">The AP sends an Association Response. / AP 返回关联应答。</p>
+<div class="source-note">课件来源 / Slide source: SOF203-Chap3-Link Layer - Wireless.pdf, PDF pp. 17, 22-23.</div>
+</section>
+<section id="sec11" class="topic-section">
+<h2 class="topic-title"><span class="en-text">11. Subnetting</span>
+ <span class="cn-text">子网划分</span>
+</h2>
+<div class="diagram-box"><svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg"><style>.st{font-size:10px;font-family:sans-serif;text-anchor:middle}.sb{font-size:9px;font-family:monospace;text-anchor:middle}</style><text x="350" y="16" class="st" font-weight="bold">Subnetting: 130.56.0.0/16 -> /26 (1024 subnets, 62 hosts each)</text><rect x="20" y="30" width="200" height="36" rx="4" fill="#dbeafe" stroke="#60a5fa"/><text x="120" y="46" class="st">130.56.0.0/16</text><text x="120" y="58" class="sb">Net:16b | Host:16b</text><text x="240" y="50" font-size="20" fill="#7c3aed">-></text><text x="275" y="42" class="st" fill="#7c3aed">Borrow 10 host bits</text><rect x="430" y="30" width="250" height="36" rx="4" fill="#d1fae5" stroke="#34d399"/><text x="555" y="46" class="st">130.56.0.0/26</text><text x="555" y="58" class="sb">Net:26b | Host:6b | Mask:255.255.255.192</text><rect x="30" y="105" width="150" height="22" rx="3" fill="#f0fdf4"/><text x="105" y="120" class="sb">.0 - .63 (62 usable)</text><rect x="190" y="105" width="150" height="22" rx="3" fill="#f0fdf4"/><text x="265" y="120" class="sb">.64 - .127 (62 usable)</text><rect x="350" y="105" width="150" height="22" rx="3" fill="#f0fdf4"/><text x="425" y="120" class="sb">.128 - .191 (62 usable)</text><rect x="510" y="105" width="150" height="22" rx="3" fill="#f0fdf4"/><text x="585" y="120" class="sb">.192 - .255 (62 usable)</text><text x="350" y="148" class="st" fill="#64748b">2^10=1024 subnets | 2^6-2=62 hosts per subnet | block size=64</text><text x="350" y="170" class="st" fill="#dc2626">Network (.0) & Broadcast (.63/.127/.191/.255) cannot be assigned!</text></svg></div>
+<p class="content-p en-recite">English (memorize) / 英文背诵：Subnetting divides one large <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> network into smaller broadcast domains connected by routers. The key operation is to borrow bits from the host portion and use them as subnet bits.</p>
+<p class="content-p cn-understand">中文理解：子网划分把一个较大的 <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> 网络分成多个由路由器连接的小型广播域。核心操作是从主机位借位，把借来的位作为子网位。</p>
+<h3 class="sub-heading"><span class="glossary-term" data-tip="Classless Inter-Domain Routing - prefix/length notation (e.g., /24)">CIDR</span> and address roles / <span class="glossary-term" data-tip="Classless Inter-Domain Routing - prefix/length notation (e.g., /24)">CIDR</span> 与地址角色</h3>
+<p class="content-p">In a prefix such as 192.168.123.132/24, /24 means the first 24 bits are network-prefix bits and the subnet mask contains 24 ones.</p>
+<p class="content-p">Network address: all remaining host bits are 0; it identifies the subnet and cannot be assigned to a normal host.</p>
+<p class="content-p">Broadcast address: all remaining host bits are 1; it reaches all hosts in that subnet and cannot be assigned to a normal host.</p>
+<p class="content-p">Usable host range: network address + 1 through broadcast address - 1.</p>
+<h3 class="sub-heading">General procedure / 通用步骤</h3>
+<p class="content-p">Determine the required number of subnets K and/or hosts per subnet L.</p>
+<p class="content-p">Choose the smallest x such that 2^x >= K. The new prefix is old prefix + x.</p>
+<p class="content-p">Check the remaining host bits h. Under the conventional rule, usable hosts = 2^h - 2.</p>
+<p class="content-p">Convert the new prefix to a dotted-decimal subnet mask.</p>
+<p class="content-p">Find the block size in the interesting octet: block size = 256 - mask value in that octet.</p>
+<p class="content-p">List network addresses in block-size increments; for each subnet find first usable, last usable, and broadcast.</p>
+<h3 class="sub-heading">Worked question: 130.56.0.0/16 into 1,024 subnets / 例题</h3>
+<p class="content-p">1,024 = 2^10, so borrow 10 bits. New prefix = /16 + 10 = /26.</p>
+<p class="content-p">A /26 mask is 255.255.255.192. Six host bits remain, so each subnet has 2^6 = 64 total addresses and 62 usable host addresses.</p>
+<p class="content-p">Block size = 256 - 192 = 64 in the fourth octet.</p>
+<div class="source-note">课件来源 / Slide source: SOF203-Chap4-Network Layer - <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> Address.pdf, PDF pp. 18-36; SOF203 Final Exam Revision Questions.pdf, Q7.</div>
+</section>
+<section id="sec12" class="topic-section">
+<h2 class="topic-title"><span class="en-text">12. Dijkstra&#x27;s Link-State Algorithm</span>
+ <span class="cn-text">Dijkstra 链路状态算法</span>
+</h2>
+<div class="diagram-box"><svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg"><style>.dn{fill:#1e293b;font-size:10px;font-family:sans-serif;text-anchor:middle}.de{fill:#64748b;font-size:8px;font-family:sans-serif;text-anchor:middle}</style><text x="200" y="14" class="dn" font-weight="bold">Dijkstra: Shortest Paths from Node t</text><circle cx="50" cy="50" r="18" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/><text x="50" y="54" class="dn" fill="#2563eb" font-weight="bold">t</text><circle cx="180" cy="30" r="18" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/><text x="180" y="34" class="dn">u</text><circle cx="180" cy="100" r="18" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/><text x="180" y="104" class="dn">v</text><circle cx="300" cy="50" r="18" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/><text x="300" y="54" class="dn">w</text><circle cx="300" cy="130" r="18" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/><text x="300" y="134" class="dn">x</text><circle cx="130" cy="190" r="18" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/><text x="130" y="194" class="dn">y</text><circle cx="300" cy="260" r="18" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/><text x="300" y="264" class="dn">z</text><line x1="65" y1="42" x2="165" y2="35" stroke="#94a3b8"/><text x="115" y="28" class="de">2</text><line x1="65" y1="58" x2="165" y2="95" stroke="#94a3b8"/><text x="100" y="80" class="de">4</text><line x1="62" y1="65" x2="118" y2="180" stroke="#94a3b8"/><text x="75" y="130" class="de">7</text><line x1="195" y1="42" x2="195" y2="88" stroke="#94a3b8"/><text x="205" y="68" class="de">3</text><line x1="195" y1="42" x2="285" y2="42" stroke="#94a3b8"/><text x="240" y="34" class="de">3</text><line x1="195" y1="112" x2="285" y2="60" stroke="#94a3b8"/><text x="255" y="82" class="de">4</text><line x1="195" y1="115" x2="285" y2="122" stroke="#94a3b8"/><text x="240" y="128" class="de">3</text><line x1="195" y1="112" x2="120" y2="178" stroke="#94a3b8"/><text x="170" y="150" class="de">8</text><line x1="315" y1="60" x2="315" y2="118" stroke="#94a3b8"/><text x="325" y="92" class="de">6</text><line x1="315" y1="142" x2="140" y2="182" stroke="#94a3b8"/><text x="230" y="170" class="de">6</text><line x1="315" y1="145" x2="315" y2="248" stroke="#94a3b8"/><text x="325" y="200" class="de">8</text><line x1="145" y1="205" x2="285" y2="250" stroke="#94a3b8"/><text x="220" y="235" class="de">12</text><text x="200" y="300" class="dn" font-weight="bold">Shortest paths from t:</text><text x="200" y="316" class="de">u:2 | v:4 | w:5(t-u-w) | x:7(t-v-x) | y:7(t-y) | z:15(t-v-x-z)</text></svg></div>
+<p class="content-p en-recite">English (memorize) / 英文背诵：In link-state routing, every router obtains a complete view of the network topology and link costs through link-state flooding. Dijkstra's algorithm then computes the least-cost paths from one source to all other nodes and produces the source router's forwarding table.</p>
+<p class="content-p cn-understand">中文理解：在链路状态路由中，各路由器通过链路状态泛洪获得完整拓扑和链路代价。随后 Dijkstra 算法从一个源点计算到所有其他节点的最小代价路径，并生成源路由器的转发表。</p>
+<h3 class="sub-heading">Notation / 记号</h3>
+<p class="content-p">c(x,y): direct link cost from x to y; infinity if x and y are not neighbours.</p>
+<p class="content-p">D(v): current estimate of the least path cost from the source to v.</p>
+<p class="content-p">p(v): predecessor of v on the current least-cost path.</p>
+<p class="content-p">N': set of nodes whose least-cost paths are definitively known.</p>
+<h3 class="sub-heading">Algorithm / 算法步骤</h3>
+<p class="content-p">Initialize N' with the source. Set D(v) to the direct link cost for each neighbour and infinity for every non-neighbour.</p>
+<p class="content-p">Choose the unvisited node w with the smallest D(w), and add w to N'.</p>
+<p class="content-p">For every unvisited neighbour v of w, update D(v) = min[D(v), D(w) + c(w,v)]. If improved, set p(v) = w.</p>
+<p class="content-p">Repeat until all nodes are in N'. Trace predecessors backward to construct paths and next hops.</p>
+<h3 class="sub-heading">Worked revision graph from source t / 从 t 出发的复习题</h3>
+<p class="content-p">Edges: t-u=2, t-v=4, t-y=7, u-v=3, u-w=3, v-w=4, v-x=3, v-y=8, w-x=6, x-y=6, x-z=8, y-z=12.</p>
+<div class="source-note">课件来源 / Slide source: SOF203-Chap4-Network Layer - Routing.pdf, PDF pp. 18-33; SOF203 Final Exam Revision Questions.pdf, Q10.</div>
+</section>
+<section id="sec13" class="topic-section">
+<h2 class="topic-title"><span class="en-text">13. Distance-Vector Routing</span>
+ <span class="cn-text">距离向量路由</span>
+</h2>
+<p class="content-p en-recite">English (memorize) / 英文背诵：A distance-vector router knows only its directly connected neighbours, the link cost to each neighbour, and the distance vectors advertised by those neighbours. It repeatedly applies the Bellman-Ford equation until all estimates converge.</p>
+<p class="content-p cn-understand">中文理解：距离向量路由器只知道直接相邻路由器、到各邻居的链路代价，以及邻居通告的距离向量。它反复应用 Bellman-Ford 方程，直到所有估计值收敛。</p>
+<h3 class="sub-heading">Operational logic / 工作逻辑</h3>
+<p class="content-p">Initialization: cost to self is 0, cost to each direct neighbour is the direct link cost, and cost to every other node is infinity.</p>
+<p class="content-p">Each node sends its distance vector to its neighbours.</p>
+<p class="content-p">After receiving neighbours' vectors, the node computes every destination through every neighbour using c(a,i)+D_i(b).</p>
+<p class="content-p">If a lower value is found, update the cost and next hop. Send the new vector when it changes.</p>
+<p class="content-p">Continue synchronous rounds or asynchronous triggered updates until no table changes.</p>
+<p class="content-p">Iterative: updates repeat. Asynchronous: a local iteration is triggered by a link-cost change or a neighbour's message. Distributed: nodes use only neighbour information.</p>
+<h3 class="sub-heading">Worked three-node example / 三节点例题</h3>
+<p class="content-p">Link costs: c(x,y)=2, c(y,z)=1, c(z,x)=4.</p>
+<p class="content-p">Reason / 推导: x learns that x->y->z costs 2+1=3, which is better than the direct cost 4. Symmetrically, z learns z->y->x costs 1+2=3. Node y already has the best direct routes.</p>
+<h3 class="sub-heading">Dijkstra vs distance vector / 两种算法对比</h3>
+<div class="source-note">课件来源 / Slide source: SOF203-Chap4-Network Layer - Routing.pdf, PDF pp. 24-38; SOF203 Final Exam Revision Questions.pdf, Q8.</div>
+</section>
+<section id="sec14" class="topic-section">
+<h2 class="topic-title"><span class="en-text">14. Identifying IP and MAC Addresses Along a Path</span>
+ <span class="cn-text">路径中的 IP 与 MAC</span>
+</h2>
+<h3 class="sub-heading">Core rule / 核心规则</h3>
+<p class="content-p en-recite">English (memorize) / 英文背诵：The <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> header describes the original end hosts, while the Ethernet header describes the current hop. A router removes the incoming Ethernet frame and creates a new frame for the next link. Therefore, the <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> source and destination normally remain unchanged, but the <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> source and destination become the outgoing router interface and the next-hop interface.</p>
+<p class="content-p cn-understand">中文理解：<span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> 首部描述原始端系统，Ethernet 首部描述当前一跳。路由器移除入站以太网帧，并为下一条链路创建新帧。因此 <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> 源/目的通常不变，而 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> 源/目的会变成出接口与下一跳接口的 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span>。</p>
+<h3 class="sub-heading">Decision method / 判断步骤</h3>
+<p class="content-p">Write the original source <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> and final destination <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span>. Keep them unchanged at every listed hop unless the question explicitly introduces <span class="glossary-term" data-tip="Network Address Translation - rewrites <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> addresses at router">NAT</span>.</p>
+<p class="content-p">For each link, identify the transmitting interface and the next receiving interface.</p>
+<p class="content-p">Frame source <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> = transmitting interface <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span>. Frame destination <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> = next-hop receiving interface <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span>.</p>
+<p class="content-p">If the next-hop <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> is unknown, <span class="glossary-term" data-tip="Address Resolution Protocol - maps IPv4 to <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address on same LAN">ARP</span> resolves that next-hop interface; it does not resolve a remote final host.</p>
+<h3 class="sub-heading">Worked revision path: PC1 -> R1 -> R2 -> PC3 / 复习题路径</h3>
+<p class="content-p">Given: PC1 <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> 10.1.1.2, <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> 54-89-98-4D-14-DD; R1 <span class="glossary-term" data-tip="Local Area Network - covers a building or office (e.g., switched Ethernet, Wi-Fi)">LAN</span>1 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> 00E0-FC39-7FFE; R1 <span class="glossary-term" data-tip="Local Area Network - covers a building or office (e.g., switched Ethernet, Wi-Fi)">LAN</span>2 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> 00E0-FC39-7FFD; R2 <span class="glossary-term" data-tip="Local Area Network - covers a building or office (e.g., switched Ethernet, Wi-Fi)">LAN</span>2 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> 00E0-FC90-11D3; R2 <span class="glossary-term" data-tip="Local Area Network - covers a building or office (e.g., switched Ethernet, Wi-Fi)">LAN</span>3 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> 00E0-FC90-11D4; PC3 <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> 10.3.3.2, <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> 54-89-98-7E-29-AF.</p>
+<div class="source-note">课件来源 / Slide source: SOF203-Chap3-Link Layer - Part 1.pdf, PDF pp. 12-26; SOF203 Final Exam Revision Questions.pdf, Q5.</div>
+</section>
+<section id="sec15" class="topic-section">
+<h2 class="topic-title"><span class="en-text">15. TCP Sequence/Acknowledgment and Reliable Transfer</span>
+ <span class="cn-text">TCP 序号、确认号与可靠传输</span>
+</h2>
+<div class="diagram-box"><svg viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg"><style>.tl{font-size:10px;font-family:monospace;fill:#334155}.tb{font-size:11px;font-family:sans-serif;fill:#1e293b;text-anchor:middle}.tc{fill:#64748b;font-size:9px;font-family:sans-serif;text-anchor:middle}</style><text x="250" y="16" class="tb" font-weight="bold">TCP Three-Way Handshake</text><rect x="20" y="35" width="80" height="30" rx="4" fill="#dbeafe" stroke="#60a5fa"/><text x="60" y="55" class="tb">Client</text><rect x="400" y="35" width="80" height="30" rx="4" fill="#d1fae5" stroke="#34d399"/><text x="440" y="55" class="tb">Server</text><line x1="100" y1="85" x2="400" y2="85" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrB)"/><text x="250" y="78" class="tc">Step 1: SYN, Seq=x</text><line x1="400" y1="140" x2="100" y2="140" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrB)"/><text x="250" y="133" class="tc">Step 2: SYN+ACK, Seq=y, ACK=x+1</text><line x1="100" y1="195" x2="400" y2="195" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arrB)"/><text x="250" y="188" class="tc">Step 3: ACK, Seq=x+1, ACK=y+1</text><rect x="180" y="230" width="140" height="28" rx="14" fill="#d1fae5" stroke="#34d399"/><text x="250" y="249" class="tb">CONNECTED</text><defs><marker id="arrB" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/></marker></defs></svg></div>
+<h3 class="sub-heading"><span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> characteristics / <span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> 特征</h3>
+<p class="content-p en-recite">English (memorize) / 英文背诵：<span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> provides a logical, connection-oriented, full-duplex byte-stream service between one sending process and one receiving process. It uses port numbers to identify processes, establishes a connection by a three-way handshake, transfers data reliably, and tears the connection down.</p>
+<p class="content-p cn-understand">中文理解：<span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> 在一个发送进程与一个接收进程之间提供逻辑的、面向连接的、全双工字节流服务。它用端口号标识进程，通过三次握手建立连接，可靠传输数据，再拆除连接。</p>
+<p class="content-p"><span class="glossary-term" data-tip="Maximum Segment Size - largest TCP payload per segment">MSS</span> (Maximum Segment Size) is the maximum application data carried in one <span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> segment. It is smaller than the link <span class="glossary-term" data-tip="Maximum Transmission Unit - largest link-layer frame payload">MTU</span> because <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> and <span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> headers also consume space.</p>
+<p class="content-p">A normal <span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> header is 20 bytes without options and can be up to 60 bytes. Exam-relevant fields include source/destination ports, sequence number, acknowledgment number, flags, window size and checksum.</p>
+<h3 class="sub-heading">Sequence number / 序号</h3>
+<p class="content-p en-recite">English (memorize) / 英文背诵：<span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> numbers bytes, not segments. The sequence number in a data segment is the number of the first data byte carried in that segment. If a segment begins with sequence number S and carries L bytes, the next segment begins with S+L.</p>
+<p class="content-p cn-understand">中文理解：<span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> 给字节编号，而不是给报文段编号。数据报文段的序号是该段第一个数据字节的编号。若某段序号为 S、携带 L 字节，则下一段序号为 S+L。</p>
+<h3 class="sub-heading">Acknowledgment number / 确认号</h3>
+<p class="content-p en-recite">English (memorize) / 英文背诵：The acknowledgment number is the sequence number of the next byte the receiver expects. It is cumulative: <span class="glossary-term" data-tip="Acknowledgment - confirms receipt (TCP: cumulative ACK number)">ACK</span>=N means every byte through N-1 has been received in order.</p>
+<p class="content-p cn-understand">中文理解：确认号表示接收方下一步期望收到的字节序号。它是累积确认：<span class="glossary-term" data-tip="Acknowledgment - confirms receipt (TCP: cumulative ACK number)">ACK</span>=N 表示截至 N-1 的所有字节都已按序收到。</p>
+<h3 class="sub-heading">Three-way handshake / 三次握手</h3>
+<h3 class="sub-heading">Data transfer and port reversal / 数据传输与端口反向</h3>
+<p class="content-p">If client data starts at x+1 and carries L bytes, the server returns <span class="glossary-term" data-tip="Acknowledgment - confirms receipt (TCP: cumulative ACK number)">ACK</span> = x+1+L.</p>
+<p class="content-p">A reply reverses the port numbers: if A->B uses source port 302 and destination port 80, B->A uses source port 80 and destination port 302.</p>
+<p class="content-p">If an out-of-order segment arrives while an earlier byte is missing, the receiver repeats the acknowledgment number of the next missing byte.</p>
+<h3 class="sub-heading">Connection teardown / 连接终止</h3>
+<p class="content-p en-recite">English (memorize) / 英文背诵：Each direction of a <span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> connection is closed independently. One side sends <span class="glossary-term" data-tip="Finish flag - TCP graceful connection close">FIN</span>, the peer acknowledges it, the peer later sends its own <span class="glossary-term" data-tip="Finish flag - TCP graceful connection close">FIN</span>, and the first side acknowledges that <span class="glossary-term" data-tip="Finish flag - TCP graceful connection close">FIN</span>. An <span class="glossary-term" data-tip="Acknowledgment - confirms receipt (TCP: cumulative ACK number)">ACK</span> can be combined with the peer's <span class="glossary-term" data-tip="Finish flag - TCP graceful connection close">FIN</span>. The active closer enters TIME_WAIT for about twice the maximum segment lifetime.</p>
+<p class="content-p cn-understand">中文理解：<span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> 的两个传输方向独立关闭。一方发送 <span class="glossary-term" data-tip="Finish flag - TCP graceful connection close">FIN</span>，对方确认；对方随后发送自己的 <span class="glossary-term" data-tip="Finish flag - TCP graceful connection close">FIN</span>，最初一方再确认。确认可以与对方的 <span class="glossary-term" data-tip="Finish flag - TCP graceful connection close">FIN</span> 合并。主动关闭方进入 TIME_WAIT，持续约 2 倍最大报文段寿命。</p>
+<h3 class="sub-heading">Reliability foundation: ARQ / 可靠传输基础</h3>
+<p class="content-p en-recite">English (memorize) / 英文背诵：Automatic Repeat reQuest (ARQ) achieves reliable transfer over an unreliable channel through error detection, receiver feedback, and retransmission. Sequence numbers detect duplicates and ordering; acknowledgments report successful receipt; timers recover from lost packets or lost ACKs.</p>
+<p class="content-p cn-understand">中文理解：自动重传请求 ARQ 通过错误检测、接收方反馈和重传，在不可靠信道之上实现可靠传输。序号检测重复与顺序，确认反馈成功接收，定时器处理分组或 <span class="glossary-term" data-tip="Acknowledgment - confirms receipt (TCP: cumulative ACK number)">ACK</span> 丢失。</p>
+<h4 class="sub-sub-heading">Stop-and-wait and pipelining / 停等与流水线</h4>
+<p class="content-p">Stop-and-wait sends one packet and waits for its <span class="glossary-term" data-tip="Acknowledgment - confirms receipt (TCP: cumulative ACK number)">ACK</span>. It handles four main cases: no loss, data loss/corruption, <span class="glossary-term" data-tip="Acknowledgment - confirms receipt (TCP: cumulative ACK number)">ACK</span> loss, and premature timeout/delayed <span class="glossary-term" data-tip="Acknowledgment - confirms receipt (TCP: cumulative ACK number)">ACK</span>. It is correct but may waste bandwidth on a large bandwidth-delay path.</p>
+<p class="content-p">Pipelining allows several unacknowledged packets to be in flight. It requires a larger sequence-number space and sender/receiver buffering, and it greatly improves utilization.</p>
+<h3 class="sub-heading">How <span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> provides reliability / <span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> 可靠性的具体实现</h3>
+<p class="content-p"><span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> combines ideas from GBN and SR: pipelined byte-oriented segments, cumulative ACKs, optional selective acknowledgments, checksums and retransmissions.</p>
+<p class="content-p">The sender maintains a retransmission timer for the oldest unacknowledged data. A timeout retransmits the segment that caused the timeout, restarts the timer, and normally increases the timeout interval.</p>
+<p class="content-p"><span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> estimates the round-trip time adaptively because RTT differs between connections and changes over time.</p>
+<p class="content-p">Receiver <span class="glossary-term" data-tip="Acknowledgment - confirms receipt (TCP: cumulative ACK number)">ACK</span> rules: delay the <span class="glossary-term" data-tip="Acknowledgment - confirms receipt (TCP: cumulative ACK number)">ACK</span> briefly for one in-order segment; immediately <span class="glossary-term" data-tip="Acknowledgment - confirms receipt (TCP: cumulative ACK number)">ACK</span> when another in-order segment arrives; immediately send a duplicate <span class="glossary-term" data-tip="Acknowledgment - confirms receipt (TCP: cumulative ACK number)">ACK</span> for an out-of-order segment; immediately <span class="glossary-term" data-tip="Acknowledgment - confirms receipt (TCP: cumulative ACK number)">ACK</span> when a gap is filled.</p>
+<p class="content-p">Fast retransmit: after three duplicate ACKs for the same missing byte, retransmit the smallest unacknowledged segment without waiting for the timer.</p>
+<p class="content-p">In practice, a receiver normally buffers out-of-order bytes until the missing gap is filled, then delivers the stream in order.</p>
+<p class="content-p">Flow control uses the receiver window rwnd so the sender does not overflow the receiver buffer. Congestion control uses cwnd so the sender does not overload the network. The actual sending window is limited by min(rwnd, cwnd).</p>
+<h3 class="sub-heading">Worked question A: ISNs and 331-byte data / 复习题 A</h3>
+<p class="content-p">Client ISN x=3974188230; server ISN y=1884869393; client sends 331 bytes after the handshake.</p>
+<h3 class="sub-heading">Worked question B: two back-to-back segments / 复习题 B</h3>
+<p class="content-p">B has received through byte 126. A sends 80 bytes at Seq=127, then 40 bytes. A's ports are source 302 and destination 80.</p>
+<p class="content-p">Second segment: Seq = 127+80 = 207; source port 302; destination port 80.</p>
+<p class="content-p">If the first segment arrives first: B sends <span class="glossary-term" data-tip="Acknowledgment - confirms receipt (TCP: cumulative ACK number)">ACK</span>=207, source port 80, destination port 302.</p>
+<p class="content-p">If the second segment arrives first: bytes beginning at 127 are still missing, so B sends duplicate cumulative <span class="glossary-term" data-tip="Acknowledgment - confirms receipt (TCP: cumulative ACK number)">ACK</span>=127.</p>
+<div class="source-note">课件来源 / Slide source: SOF203-Chap5-TransportLayer-Part1.pdf, PDF pp. 16-50; SOF203-Chap5-TransportLayer-Part2.pdf, PDF pp. 7-50; SOF203 Final Exam Revision Questions.pdf, Q9 and Q11.</div>
+</section>
+<section id="sec16" class="topic-section">
+<h2 class="topic-title"><span class="en-text">16. HTTP Request and Response Analysis</span>
+ <span class="cn-text">HTTP 请求与响应报文分析</span>
+</h2>
+<h3 class="sub-heading"><span class="glossary-term" data-tip="Hypertext Transfer Protocol - application-layer web protocol">HTTP</span> overview / <span class="glossary-term" data-tip="Hypertext Transfer Protocol - application-layer web protocol">HTTP</span> 概述</h3>
+<p class="content-p en-recite">English (memorize) / 英文背诵：<span class="glossary-term" data-tip="Hypertext Transfer Protocol - application-layer web protocol">HTTP</span> is an application-layer client/server protocol used to transfer Web objects. A browser is the <span class="glossary-term" data-tip="Hypertext Transfer Protocol - application-layer web protocol">HTTP</span> client and a Web server supplies requested objects. The course model uses <span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> port 80. <span class="glossary-term" data-tip="Hypertext Transfer Protocol - application-layer web protocol">HTTP</span> is stateless: the server does not automatically retain information about earlier client requests.</p>
+<p class="content-p cn-understand">中文理解：<span class="glossary-term" data-tip="Hypertext Transfer Protocol - application-layer web protocol">HTTP</span> 是传输 Web 对象的应用层客户/服务器协议。浏览器是 <span class="glossary-term" data-tip="Hypertext Transfer Protocol - application-layer web protocol">HTTP</span> 客户端，Web 服务器返回请求对象。课件采用 <span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> 端口 80。<span class="glossary-term" data-tip="Hypertext Transfer Protocol - application-layer web protocol">HTTP</span> 是无状态的：服务器不会自动保存客户之前请求的信息。</p>
+<p class="content-p">A Web page normally contains a base HTML file plus referenced objects such as images, audio, or scripts. Each object is identified by a URL containing a host name and a path.</p>
+<h3 class="sub-heading">Persistent vs non-persistent connections / 持久与非持久连接</h3>
+<h3 class="sub-heading"><span class="glossary-term" data-tip="Hypertext Transfer Protocol - application-layer web protocol">HTTP</span> request structure / 请求报文结构</h3>
+<h4 class="sub-sub-heading">Common methods / 常见方法</h4>
+<p class="content-p">GET retrieves an object; POST normally carries submitted form data in the entity body; HEAD requests headers without the object body; PUT uploads an entity to the URL path; DELETE removes the specified resource.</p>
+<h3 class="sub-heading"><span class="glossary-term" data-tip="Hypertext Transfer Protocol - application-layer web protocol">HTTP</span> response structure / 响应报文结构</h3>
+<h3 class="sub-heading">Worked request trace / 请求抓包例题</h3>
+<p class="content-p">URL: http://gaia.cs.umass.edu/cs453/index.html (Host + request path).</p>
+<p class="content-p">Version: <span class="glossary-term" data-tip="Hypertext Transfer Protocol - application-layer web protocol">HTTP</span>/1.1, found at the end of the request line.</p>
+<p class="content-p">Connection: persistent, because Connection: keep-alive.</p>
+<p class="content-p">Browser: Mozilla/Netscape 7.2 on the indicated Windows environment, found in User-Agent. The server may use it to select a compatible representation.</p>
+<h3 class="sub-heading">Worked response trace / 响应抓包例题</h3>
+<p class="content-p">The server found the document successfully: 200 OK.</p>
+<p class="content-p">Reply time: Tue, 07 Mar 2008 12:39:45 GMT, from Date.</p>
+<p class="content-p">Last modified: Sat, 10 Dec 2005 18:27:46 GMT, from Last-Modified.</p>
+<p class="content-p">Returned length: 3,874 bytes, from Content-Length.</p>
+<p class="content-p">First five entity-body bytes/characters: <!doc.</p>
+<div class="source-note">课件来源 / Slide source: SOF203-Chap6-Application Layer.pdf, PDF pp. 39-52; SOF203 Final Exam Revision Questions.pdf, Q12-Q13.</div>
+</section>
+<section id="sec17" class="topic-section">
+<h2 class="topic-title"><span class="en-text">Appendix A. Final Revision Questions - Answer Key</span>
+ <span class="cn-text">复习题答案</span>
+</h2>
+<p class="content-p">This appendix gives a compact checking key. Use the main chapters above for the full bilingual explanation and derivation. / 本附录用于快速核对，完整双语推导见前文。</p>
+<h3 class="sub-heading">Q1. Five layers and responsibilities / 五层与职责</h3>
+<p class="content-p">Application: message format/meaning and application procedures. Transport: process-to-process transfer, ports, reliability, flow/congestion control. Network: host-to-host <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> addressing, routing and forwarding. Link: hop-to-hop frames, <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> and medium access, error detection. Physical: signals, media and raw bits.</p>
+<h3 class="sub-heading">Q2. Circuit-switching advantage / 电路交换优势</h3>
+<p class="content-p">Reserved resources provide a guaranteed rate and predictable performance without queueing from other users after setup. Trade-offs: setup delay and idle reserved capacity.</p>
+<h3 class="sub-heading">Q3. Delays / 时延</h3>
+<p class="content-p">Propagation = 10 ms. Transmission = 0.16 ms. Convert 2,000 bytes to 16,000 bits and 2,500 km to 2.5 x 10^6 m.</p>
+<h3 class="sub-heading">Q4. <span class="glossary-term" data-tip="Address Resolution Protocol - maps IPv4 to <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address on same LAN">ARP</span> broadcast/unicast / <span class="glossary-term" data-tip="Address Resolution Protocol - maps IPv4 to <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address on same LAN">ARP</span> 广播与单播</h3>
+<p class="content-p">The request is broadcast because the target <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> is unknown. The reply is unicast because the request contains the requester's <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> and only the requester needs the mapping.</p>
+<h3 class="sub-heading">Q5. PC1 to PC3 addressing / 地址变化</h3>
+<h3 class="sub-heading">Q6. Learning switch / 学习交换机</h3>
+<p class="content-p">B->E: learn B, flood. E->B: learn E, unicast to B. A->B: learn A, unicast to B. B->A: refresh B, unicast to A.</p>
+<h3 class="sub-heading">Q7. 1,024 subnets / 1,024 个子网</h3>
+<p class="content-p">Borrow 10 bits: /26, mask 255.255.255.192. First four networks are 130.56.0.0, .64, .128 and .192; broadcasts are .63, .127, .191 and .255; usable ranges are the addresses in between.</p>
+<h3 class="sub-heading">Q8. Distance-vector triangle / 距离向量三角形</h3>
+<p class="content-p">Initial vectors: x=(0,2,4), y=(2,0,1), z=(4,1,0). After one synchronous round: x=(0,2,3 via y), y unchanged, z=(3 via y,1,0). No change in the next round.</p>
+<h3 class="sub-heading">Q9. <span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> handshake and data / <span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> 握手与数据</h3>
+<p class="content-p">i) 3974188231; ii) 3974188231; iii) 1884869394; iv) 3974188231; v) 3974188562.</p>
+<h3 class="sub-heading">Q10. Dijkstra from t / 从 t 的 Dijkstra</h3>
+<p class="content-p">Costs and paths: u=2 (t-u); v=4 (t-v); w=5 (t-u-w); x=7 (t-v-x); y=7 (t-y); z=15 (t-v-x-z).</p>
+<h3 class="sub-heading">Q11. <span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> two segments / <span class="glossary-term" data-tip="Transmission Control Protocol - connection-oriented, reliable transport">TCP</span> 两段</h3>
+<p class="content-p">i) Second segment Seq=207, source port 302, destination port 80. ii) If the first arrives first, <span class="glossary-term" data-tip="Acknowledgment - confirms receipt (TCP: cumulative ACK number)">ACK</span>=207, source port 80, destination port 302. iii) If the second arrives first, <span class="glossary-term" data-tip="Acknowledgment - confirms receipt (TCP: cumulative ACK number)">ACK</span>=127.</p>
+<h3 class="sub-heading">Q12. <span class="glossary-term" data-tip="Hypertext Transfer Protocol - application-layer web protocol">HTTP</span> GET / <span class="glossary-term" data-tip="Hypertext Transfer Protocol - application-layer web protocol">HTTP</span> 请求</h3>
+<p class="content-p">i) http://gaia.cs.umass.edu/cs453/index.html. ii) <span class="glossary-term" data-tip="Hypertext Transfer Protocol - application-layer web protocol">HTTP</span>/1.1. iii) Persistent (Connection: keep-alive). iv) Mozilla/Netscape 7.2; User-Agent supports compatibility/content negotiation.</p>
+<h3 class="sub-heading">Q13. <span class="glossary-term" data-tip="Hypertext Transfer Protocol - application-layer web protocol">HTTP</span> reply / <span class="glossary-term" data-tip="Hypertext Transfer Protocol - application-layer web protocol">HTTP</span> 响应</h3>
+<p class="content-p">i) Successful: 200 OK; Date Tue, 07 Mar 2008 12:39:45 GMT. ii) Sat, 10 Dec 2005 18:27:46 GMT. iii) 3,874 bytes. iv) First five bytes/characters: <!doc.</p>
+</section>
+<section id="sec18" class="topic-section">
+<h2 class="topic-title"><span class="en-text">Appendix B. Last-Minute English Recitation</span>
+ <span class="cn-text">考前英文速背</span>
+</h2>
+</section>
+<section id="sec19" class="topic-section">
+<h2 class="topic-title"><span class="en-text">Appendix C. Source Map</span>
+ <span class="cn-text">课件页码索引</span>
+</h2>
+<p class="content-p">Scope note / 范围说明: Course Learning Outcome 4 (planning and configuring a simple network) is crossed out in the teacher's Revision slide and is therefore not expanded as an examination focus.</p>
+</section>
+</div>
+</main>
+
+<script>
+function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open')}
+function navigateTo(slug){document.getElementById('sidebar').classList.remove('open');document.querySelectorAll('.sidebar-nav a').forEach(function(a){a.classList.remove('active')});if(event&&event.target)event.target.classList.add('active');var sec=document.getElementById(slug);if(sec){sec.style.animation='none';sec.offsetHeight;sec.style.animation='fadeSlideIn .35s ease'}}
+var langMode='both';
+function toggleLang(){var modes=['both','en','cn'];var labels=['CN+EN','EN Only','CN Only'];var idx=modes.indexOf(langMode);langMode=modes[(idx+1)%3];document.getElementById('btnLang').textContent=labels[(idx+1)%3];updateLangView()}
+function updateLangView(){document.querySelectorAll('.en-text').forEach(function(el){el.style.display=langMode==='cn'?'none':''});document.querySelectorAll('.cn-text').forEach(function(el){el.style.display=langMode==='en'?'none':''});document.querySelectorAll('.en-recite').forEach(function(el){el.style.display=langMode==='cn'?'none':''});document.querySelectorAll('.cn-understand').forEach(function(el){el.style.display=langMode==='en'?'none':''})}
+var detailMode='full';
+function toggleDetail(){detailMode=detailMode==='full'?'summary':'full';var btn=document.getElementById('btnDetail');btn.textContent=detailMode==='full'?'Summary':'Detailed';if(detailMode==='full'){btn.classList.remove('btn-active')}else{btn.classList.add('btn-active')};document.querySelectorAll('.content-p,.sub-heading,.sub-sub-heading,.source-note').forEach(function(el){if(detailMode==='summary'){if(el.classList.contains('content-p')&&!el.classList.contains('en-recite')&&!el.classList.contains('cn-understand'))el.style.display='none';if(el.classList.contains('sub-sub-heading'))el.style.display='none';if(el.classList.contains('source-note'))el.style.display='none'}else{el.style.display=''}})}
+function toggleTheme(){var body=document.body;var theme=body.getAttribute('data-theme')==='dark'?'light':'dark';body.setAttribute('data-theme',theme);localStorage.setItem('sof203-theme',theme)}
+function doSearch(){var q=document.getElementById('searchBox').value.toLowerCase().trim();document.querySelectorAll('.highlight').forEach(function(h){h.outerHTML=h.textContent});document.querySelectorAll('.topic-section').forEach(function(sec){if(!q){sec.style.display='';return}sec.style.display=sec.textContent.toLowerCase().indexOf(q)>=0?'':'none'});if(q){document.querySelectorAll('.topic-section:not([style*="none"]) .content-p,.topic-section:not([style*="none"]) .topic-title,.topic-section:not([style*="none"]) .sub-heading').forEach(function(el){var html=el.innerHTML;var escaped=q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');el.innerHTML=html.replace(new RegExp('('+escaped+')','gi'),'<span class="highlight">$1</span>')})}}
+function updateActiveNav(){var sections=document.querySelectorAll('.topic-section');var scrollPos=window.scrollY+120;var current='';sections.forEach(function(sec){if(sec.offsetTop<=scrollPos)current=sec.id});document.querySelectorAll('.sidebar-nav a').forEach(function(a){a.classList.remove('active');if(a.getAttribute('href')==='#'+current)a.classList.add('active')})}
+(function(){var saved=localStorage.getItem('sof203-theme');if(saved)document.body.setAttribute('data-theme',saved);window.addEventListener('scroll',updateActiveNav);document.addEventListener('keydown',function(e){if(e.ctrlKey&&e.key==='k'){e.preventDefault();document.getElementById('searchBox').focus()}if(e.ctrlKey&&e.key==='l'){e.preventDefault();toggleLang()}if(e.ctrlKey&&e.key==='d'){e.preventDefault();toggleDetail()}})})()
+
+</script>
+</body>
+</html>
