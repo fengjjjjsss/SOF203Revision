@@ -261,6 +261,17 @@ a{color:var(--primary);text-decoration:none}
 <h2 class="topic-title"><span class="en-text">5. Simplex, Half-Duplex and Full-Duplex</span>
  <span class="cn-text">单工、半双工与全双工</span>
 </h2>
+<p class="content-p en-recite">English (memorize) / 英文背诵：Communication modes describe how data flows between two devices. The three fundamental modes are simplex (one-way), half-duplex (two-way but not at the same time), and full-duplex (simultaneous two-way).</p>
+<p class="content-p cn-understand">中文理解：通信模式描述两个设备之间数据流动的方向。三种基本模式为单工(单向)、半双工(双向但不同时)和全双工(同时双向)。</p>
+<div class="diagram-box" style="margin:14px 0">
+<table class="layer-table" style="font-size:.82em"><thead><tr><th>Mode / 模式</th><th>Definition / 定义</th><th>Analogy / 类比</th><th>Example / 例子</th></tr></thead><tbody>
+<tr><td><strong>Simplex<br>单工</strong></td><td>Data flows in <strong>only one direction</strong>.<br>数据只能沿一个方向流动。</td><td>One-way street<br>单行道</td><td>Broadcast radio, television<br>广播、电视</td></tr>
+<tr><td><strong>Half-Duplex<br>半双工</strong></td><td>Both directions are possible, but <strong>only one side transmits at a time</strong> over the shared medium.<br>两个方向都可通信，但任一时刻只能一方发送。</td><td>Walkie-talkie (push-to-talk)<br>对讲机（按讲）</td><td>Walkie-talkies, legacy hub-based Ethernet<br>对讲机、传统集线器以太网</td></tr>
+<tr><td><strong>Full-Duplex<br>全双工</strong></td><td>Both sides transmit <strong>simultaneously</strong> in both directions.<br>双方可同时双向发送。</td><td>Telephone conversation<br>电话通话</td><td>Telephone, modern switched Ethernet<br>电话、现代交换式以太网</td></tr>
+</tbody></table>
+</div>
+<div class="qa-answer" style="margin:12px 0 0 0"><div class="label">Key Distinction / 核心区别</div><p><strong>Direction</strong> asks whether A can send to B and B can send to A; <strong>duplex</strong> asks whether the two directions can happen <strong>at the same time</strong>. Simplex = one direction only. Half-duplex = two directions but <strong>not simultaneous</strong>. Full-duplex = two directions <strong>simultaneously</strong>.</p><p style="margin-top:6px;color:var(--text2);font-size:.9em"><strong>方向</strong>问A能否发给B、B能否发给A；<strong>双工</strong>问两个方向能否<strong>同时</strong>进行。单工=仅一个方向。半双工=双向但<strong>不能同时</strong>。全双工=<strong>同时</strong>双向。</p></div>
+<div class=
 <div class="source-note">课件来源 / Slide source: SOF203-Chap2-DataTransmission-v2.pdf, PDF pp. 10-15.</div>
 </section>
 <section id="sec6" class="topic-section">
