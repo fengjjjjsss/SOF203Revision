@@ -193,7 +193,7 @@ a{color:var(--primary);text-decoration:none}
 <p class="content-p">Formulas always include units. Convert bytes to bits, kilometres to metres, and <span class="glossary-term" data-tip="Megabits per second (10^6 bps) - data rate unit">Mbps</span> to bps before substitution.</p>
 <p class="content-p">For protocol traces, state both the field value and the reason it has that value.</p>
 <p class="content-p">For routing and subnetting, show intermediate tables or steps; a final number alone is not enough.</p>
-<div class="source-note"><a href="计算机网络课件/SOF203-Revision.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Revision.pdf, PDF pp. 2-7</a></div>
+<div class="source-note"><a href="计算机网络课件/SOF203-Revision.pdf#page=2" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Revision.pdf, PDF pp. 2-7</a></div>
 </section>
 <section id="sec1" class="topic-section">
 <h2 class="topic-title"><span class="en-text">1. Types of Networks by Coverage</span>
@@ -201,7 +201,7 @@ a{color:var(--primary);text-decoration:none}
 </h2>
 <p class="content-p en-recite">English (memorize) / 英文背诵：Networks can be classified by the geographic area they cover. The usual order from the smallest to the largest is <span class="glossary-term" data-tip="Personal Area Network - covers vicinity of one person (e.g., Bluetooth)">PAN</span>, <span class="glossary-term" data-tip="Local Area Network - covers a building or office (e.g., switched Ethernet, Wi-Fi)">LAN</span>, <span class="glossary-term" data-tip="Metropolitan Area Network - covers a city (e.g., cable TV network)">MAN</span>, <span class="glossary-term" data-tip="Wide Area Network - covers a country or large region (e.g., <span class="glossary-term" data-tip="Internet Service Provider - provides network access">ISP</span> network)">WAN</span>, and the Internet.</p>
 <p class="content-p cn-understand">中文理解：网络可按覆盖的地理范围分类。由小到大的常见顺序是 <span class="glossary-term" data-tip="Personal Area Network - covers vicinity of one person (e.g., Bluetooth)">PAN</span>、<span class="glossary-term" data-tip="Local Area Network - covers a building or office (e.g., switched Ethernet, Wi-Fi)">LAN</span>、<span class="glossary-term" data-tip="Metropolitan Area Network - covers a city (e.g., cable TV network)">MAN</span>、<span class="glossary-term" data-tip="Wide Area Network - covers a country or large region (e.g., <span class="glossary-term" data-tip="Internet Service Provider - provides network access">ISP</span> network)">WAN</span>，以及覆盖全球的 Internet。</p>
-<div class="source-note"><a href="计算机网络课件/SOF203-Chap1-Introduction.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap1-Introduction.pdf, PDF pp. 5-10</a></div>
+<div class="source-note"><a href="计算机网络课件/SOF203-Chap1-Introduction.pdf#page=5" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap1-Introduction.pdf, PDF pp. 5-10</a></div>
 </section>
 <section id="sec2" class="topic-section">
 <h2 class="topic-title"><span class="en-text">2. Layered Models and Responsibilities</span>
@@ -218,7 +218,7 @@ a{color:var(--primary);text-decoration:none}
 <h4 class="sub-sub-heading">The two extra <span class="glossary-term" data-tip="Open Systems Interconnection - 7-layer reference model (ISO)">OSI</span> layers / <span class="glossary-term" data-tip="Open Systems Interconnection - 7-layer reference model (ISO)">OSI</span> 多出的两层</h4>
 <p class="content-p">Presentation layer / 表示层: enables applications to interpret data; may perform translation, encryption/decryption, compression/decompression, and machine-specific representation.</p>
 <p class="content-p">Session layer / 会话层: manages dialog sessions and provides synchronization, checkpoints, and recovery of an interrupted data exchange.</p>
-<div class="source-note"><a href="计算机网络课件/SOF203-Chap1-Introduction.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap1-Introduction.pdf, PDF pp. 44-52</a></div>
+<div class="source-note"><a href="计算机网络课件/SOF203-Chap1-Introduction.pdf#page=44" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap1-Introduction.pdf, PDF pp. 44-52</a></div>
 <table class="layer-table"><thead><tr><th>Layer</th><th>中文</th><th style="min-width:280px">Core Responsibility / 核心职责</th><th>Typical Protocols</th></tr></thead><tbody>
 <tr><td><strong>5</strong></td><td><strong>应用层 Application</strong></td><td>支持网络应用，定义消息格式和交互规则<br>Support network applications; define message format and meaning</td><td>HTTP, FTP, SMTP, DNS</td></tr>
 <tr><td><strong>4</strong></td><td><strong>传输层 Transport</strong></td><td>进程到进程的数据传输，可靠/不可靠传输、流量控制、拥塞控制<br>Process-to-process data transfer; reliable/unreliable delivery; flow control; congestion control</td><td>TCP, UDP</td></tr>
@@ -241,7 +241,7 @@ a{color:var(--primary);text-decoration:none}
 <p class="content-p">A switch normally examines the link-layer header and forwards a frame using <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> addresses. It does not remove the end-to-end transport information.</p>
 <p class="content-p">A router removes the incoming link-layer frame, examines the <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> datagram, selects an outgoing interface, and encapsulates the same <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> datagram in a new link-layer frame for the next hop.</p>
 <p class="content-p">Therefore, source and destination <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> addresses normally remain end-to-end, while source and destination <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> addresses change at every routed hop. <span class="glossary-term" data-tip="Time To Live - limits packet lifetime, decremented at each router">TTL</span> is updated by routers; <span class="glossary-term" data-tip="Network Address Translation - rewrites <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> addresses at router">NAT</span> is a special case that can rewrite <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> addresses.</p>
-<div class="source-note"><a href="计算机网络课件/SOF203-Chap1-Introduction.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap1-Introduction.pdf, PDF pp. 53-60</a>; <a href="计算机网络课件/SOF203-Chap3-Link Layer - Part 1.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap3-Link Layer - Part 1.pdf, PDF pp. 21-26</a></div>
+<div class="source-note"><a href="计算机网络课件/SOF203-Chap1-Introduction.pdf#page=53" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap1-Introduction.pdf, PDF pp. 53-60</a>; <a href="计算机网络课件/SOF203-Chap3-Link Layer - Part 1.pdf#page=21" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap3-Link Layer - Part 1.pdf, PDF pp. 21-26</a></div>
 </section>
 <section id="sec4" class="topic-section">
 <h2 class="topic-title"><span class="en-text">4. Multiplexing: FDM and TDM</span>
@@ -255,7 +255,7 @@ a{color:var(--primary);text-decoration:none}
 <h3 class="sub-heading">Time Division Multiplexing (<span class="glossary-term" data-tip="Time Division Multiplexing - divides time into slots">TDM</span>) / 时分复用</h3>
 <p class="content-p en-recite">English (memorize) / 英文背诵：<span class="glossary-term" data-tip="Time Division Multiplexing - divides time into slots">TDM</span> divides transmission time into slots. Senders take turns, usually in round-robin order, and each sender transmits during its assigned slot.</p>
 <p class="content-p cn-understand">中文理解：<span class="glossary-term" data-tip="Time Division Multiplexing - divides time into slots">TDM</span> 把传输时间划分为时隙。发送者按顺序轮流使用介质，通常采用轮询方式，每个发送者在分配给自己的时隙中传输。</p>
-<div class="source-note"><a href="计算机网络课件/SOF203-Chap2-DataTransmission-v2.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap2-DataTransmission-v2.pdf, PDF pp. 6-8</a></div>
+<div class="source-note"><a href="计算机网络课件/SOF203-Chap2-DataTransmission-v2.pdf#page=6" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap2-DataTransmission-v2.pdf, PDF pp. 6-8</a></div>
 </section>
 <section id="sec5" class="topic-section">
 <h2 class="topic-title"><span class="en-text">5. Simplex, Half-Duplex and Full-Duplex</span>
@@ -272,7 +272,7 @@ a{color:var(--primary);text-decoration:none}
 </div>
 <div class="qa-answer" style="margin:12px 0 0 0"><div class="label">Key Distinction / 核心区别</div><p><strong>Direction</strong> asks whether A can send to B and B can send to A; <strong>duplex</strong> asks whether the two directions can happen <strong>at the same time</strong>. Simplex = one direction only. Half-duplex = two directions but <strong>not simultaneous</strong>. Full-duplex = two directions <strong>simultaneously</strong>.</p><p style="margin-top:6px;color:var(--text2);font-size:.9em"><strong>方向</strong>问A能否发给B、B能否发给A；<strong>双工</strong>问两个方向能否<strong>同时</strong>进行。单工=仅一个方向。半双工=双向但<strong>不能同时</strong>。全双工=<strong>同时</strong>双向。</p></div>
 <div class=
-<div class="source-note"><a href="计算机网络课件/SOF203-Chap2-DataTransmission-v2.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap2-DataTransmission-v2.pdf, PDF pp. 10-15</a></div>
+<div class="source-note"><a href="计算机网络课件/SOF203-Chap2-DataTransmission-v2.pdf#page=10" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap2-DataTransmission-v2.pdf, PDF pp. 10-15</a></div>
 </section>
 <section id="sec6" class="topic-section">
 <h2 class="topic-title"><span class="en-text">6. Circuit Switching vs Packet Switching</span>
@@ -285,7 +285,7 @@ a{color:var(--primary);text-decoration:none}
 <h3 class="sub-heading">Packet switching / 分组交换</h3>
 <p class="content-p en-recite">English (memorize) / 英文背诵：Packet switching divides data into packets and shares links among users. No dedicated circuit setup is required; packets are stored and forwarded by routers. Sharing improves resource utilization, but packets may experience variable queueing delay and may be dropped when buffers are full.</p>
 <p class="content-p cn-understand">中文理解：分组交换把数据划分为分组，让多个用户共享链路。它不需要建立专用电路，路由器采用存储转发。共享提高资源利用率，但分组会经历可变的排队时延，缓存满时还可能丢失。</p>
-<div class="source-note"><a href="计算机网络课件/SOF203-Chap2-DataTransmission-v2.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap2-DataTransmission-v2.pdf, PDF pp. 37-42</a></div><div class="diagram-box" style="margin:14px 0">
+<div class="source-note"><a href="计算机网络课件/SOF203-Chap2-DataTransmission-v2.pdf#page=37" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap2-DataTransmission-v2.pdf, PDF pp. 37-42</a></div><div class="diagram-box" style="margin:14px 0">
 <table class="layer-table" style="font-size:.82em"><thead><tr><th></th><th>Circuit Switching / 电路交换</th><th>Packet Switching / 分组交换</th></tr></thead><tbody>
 <tr><td><strong>连接建立 Connection setup</strong></td><td>需要 (setup → use → teardown)</td><td>不需要 not required</td></tr>
 <tr><td><strong>资源 Resource</strong></td><td>独占 dedicated / isolated path</td><td>共享 shared among users</td></tr>
@@ -317,7 +317,7 @@ a{color:var(--primary);text-decoration:none}
 <p class="content-p">Convert: L = 2,000 x 8 = 16,000 bits; d = 2,500 x 1,000 = 2.5 x 10^6 m; R = 100 x 10^6 bps.</p>
 <p class="content-p">Propagation delay: d_prop = d/s = (2.5 x 10^6)/(2.5 x 10^8) = 0.01 s = 10 ms.</p>
 <p class="content-p">Transmission delay: d_trans = L/R = 16,000/(100 x 10^6) = 0.00016 s = 0.16 ms.</p>
-<div class="source-note"><a href="计算机网络课件/SOF203-Chap2-DataTransmission-v2.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap2-DataTransmission-v2.pdf, PDF pp. 43-51</a>; <a href="计算机网络课件/SOF203 Final Exam Revision Questions.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203 Final Exam Revision Questions.pdf, Q3</a></div>
+<div class="source-note"><a href="计算机网络课件/SOF203-Chap2-DataTransmission-v2.pdf#page=43" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap2-DataTransmission-v2.pdf, PDF pp. 43-51</a>; <a href="计算机网络课件/SOF203 Final Exam Revision Questions.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203 Final Exam Revision Questions.pdf, Q3</a></div>
 </section>
 <section id="sec8" class="topic-section">
 <h2 class="topic-title"><span class="en-text">8. ARP and Packet-Trace Analysis</span>
@@ -336,7 +336,7 @@ a{color:var(--primary);text-decoration:none}
 <p class="content-p en-recite">English (memorize) / 英文背诵：The request must be broadcast because the sender does not yet know which <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address owns the target <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span>. The reply can be unicast because the target learned the requester's <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address from the request, and only that requester needs the answer.</p>
 <p class="content-p cn-understand">中文理解：请求必须广播，因为发送者还不知道目标 <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> 对应哪一个 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span>；应答可单播，因为目标已从请求中获知请求者的 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span>，而且只有请求者需要答案。</p>
 <h3 class="sub-heading">Wireshark checklist / 抓包字段检查表</h3>
-<div class="source-note"><a href="计算机网络课件/SOF203-Chap3-Link Layer - Part 1.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap3-Link Layer - Part 1.pdf, PDF pp. 12-20</a></div>
+<div class="source-note"><a href="计算机网络课件/SOF203-Chap3-Link Layer - Part 1.pdf#page=12" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap3-Link Layer - Part 1.pdf, PDF pp. 12-20</a></div>
 </section>
 <section id="sec9" class="topic-section">
 <h2 class="topic-title"><span class="en-text">9. Learning Switch: Self-Learning and Forwarding</span>
@@ -354,7 +354,7 @@ a{color:var(--primary);text-decoration:none}
 <p class="content-p">If the destination is known on the same incoming interface, filter/drop the frame because the destination is already on that segment. / 已知且在同一入接口：过滤。</p>
 <p class="content-p">If the destination is unknown, or the frame is broadcast, flood it on every interface except the incoming interface. / 未知或广播：除入接口外泛洪。</p>
 <h3 class="sub-heading">Worked learning sequence / 复习题交换表过程</h3>
-<div class="source-note"><a href="计算机网络课件/SOF203-Chap3-Link Layer - Part 1.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap3-Link Layer - Part 1.pdf, PDF pp. 33-40</a>; <a href="计算机网络课件/SOF203 Final Exam Revision Questions.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203 Final Exam Revision Questions.pdf, Q6</a></div>
+<div class="source-note"><a href="计算机网络课件/SOF203-Chap3-Link Layer - Part 1.pdf#page=33" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap3-Link Layer - Part 1.pdf, PDF pp. 33-40</a>; <a href="计算机网络课件/SOF203 Final Exam Revision Questions.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203 Final Exam Revision Questions.pdf, Q6</a></div>
 </section>
 <section id="sec10" class="topic-section">
 <h2 class="topic-title"><span class="en-text">10. Active and Passive Scanning in WLAN</span>
@@ -372,7 +372,7 @@ a{color:var(--primary);text-decoration:none}
 <p class="content-p">Nearby APs return Probe Responses. / 附近 AP 返回 Probe Response。</p>
 <p class="content-p">The station selects an AP and sends an Association Request. / 站点选择 AP 并发送关联请求。</p>
 <p class="content-p">The AP sends an Association Response. / AP 返回关联应答。</p>
-<div class="source-note"><a href="计算机网络课件/SOF203-Chap3-Link Layer - Wireless.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap3-Link Layer - Wireless.pdf, PDF pp. 17, 22-23</a></div>
+<div class="source-note"><a href="计算机网络课件/SOF203-Chap3-Link Layer - Wireless.pdf#page=17" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap3-Link Layer - Wireless.pdf, PDF pp. 17, 22-23</a></div>
 </section>
 <section id="sec11" class="topic-section">
 <h2 class="topic-title"><span class="en-text">11. Subnetting</span>
@@ -397,7 +397,7 @@ a{color:var(--primary);text-decoration:none}
 <p class="content-p">1,024 = 2^10, so borrow 10 bits. New prefix = /16 + 10 = /26.</p>
 <p class="content-p">A /26 mask is 255.255.255.192. Six host bits remain, so each subnet has 2^6 = 64 total addresses and 62 usable host addresses.</p>
 <p class="content-p">Block size = 256 - 192 = 64 in the fourth octet.</p>
-<div class="source-note"><a href="计算机网络课件/SOF203-Chap4-Network Layer - IP Address.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap4-Network Layer - IP Address.pdf, PDF pp. 18-36</a>; <a href="计算机网络课件/SOF203 Final Exam Revision Questions.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203 Final Exam Revision Questions.pdf, Q7</a></div>
+<div class="source-note"><a href="计算机网络课件/SOF203-Chap4-Network Layer - IP Address.pdf#page=18" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap4-Network Layer - IP Address.pdf, PDF pp. 18-36</a>; <a href="计算机网络课件/SOF203 Final Exam Revision Questions.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203 Final Exam Revision Questions.pdf, Q7</a></div>
 </section>
 <section id="sec12" class="topic-section">
 <h2 class="topic-title"><span class="en-text">12. Dijkstra&#x27;s Link-State Algorithm</span>
@@ -418,7 +418,7 @@ a{color:var(--primary);text-decoration:none}
 <p class="content-p">Repeat until all nodes are in N'. Trace predecessors backward to construct paths and next hops.</p>
 <h3 class="sub-heading">Worked revision graph from source t / 从 t 出发的复习题</h3>
 <p class="content-p">Edges: t-u=2, t-v=4, t-y=7, u-v=3, u-w=3, v-w=4, v-x=3, v-y=8, w-x=6, x-y=6, x-z=8, y-z=12.</p>
-<div class="source-note"><a href="计算机网络课件/SOF203-Chap4-Network Layer - Routing.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap4-Network Layer - Routing.pdf, PDF pp. 18-33</a>; <a href="计算机网络课件/SOF203 Final Exam Revision Questions.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203 Final Exam Revision Questions.pdf, Q10</a></div>
+<div class="source-note"><a href="计算机网络课件/SOF203-Chap4-Network Layer - Routing.pdf#page=18" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap4-Network Layer - Routing.pdf, PDF pp. 18-33</a>; <a href="计算机网络课件/SOF203 Final Exam Revision Questions.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203 Final Exam Revision Questions.pdf, Q10</a></div>
 </section>
 <section id="sec13" class="topic-section">
 <h2 class="topic-title"><span class="en-text">13. Distance-Vector Routing</span>
@@ -437,7 +437,7 @@ a{color:var(--primary);text-decoration:none}
 <p class="content-p">Link costs: c(x,y)=2, c(y,z)=1, c(z,x)=4.</p>
 <p class="content-p">Reason / 推导: x learns that x->y->z costs 2+1=3, which is better than the direct cost 4. Symmetrically, z learns z->y->x costs 1+2=3. Node y already has the best direct routes.</p>
 <h3 class="sub-heading">Dijkstra vs distance vector / 两种算法对比</h3>
-<div class="source-note"><a href="计算机网络课件/SOF203-Chap4-Network Layer - Routing.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap4-Network Layer - Routing.pdf, PDF pp. 24-38</a>; <a href="计算机网络课件/SOF203 Final Exam Revision Questions.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203 Final Exam Revision Questions.pdf, Q8</a></div>
+<div class="source-note"><a href="计算机网络课件/SOF203-Chap4-Network Layer - Routing.pdf#page=24" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap4-Network Layer - Routing.pdf, PDF pp. 24-38</a>; <a href="计算机网络课件/SOF203 Final Exam Revision Questions.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203 Final Exam Revision Questions.pdf, Q8</a></div>
 </section>
 <section id="sec14" class="topic-section">
 <h2 class="topic-title"><span class="en-text">14. Identifying IP and MAC Addresses Along a Path</span>
@@ -453,7 +453,7 @@ a{color:var(--primary);text-decoration:none}
 <p class="content-p">If the next-hop <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> is unknown, <span class="glossary-term" data-tip="Address Resolution Protocol - maps IPv4 to <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> address on same LAN">ARP</span> resolves that next-hop interface; it does not resolve a remote final host.</p>
 <h3 class="sub-heading">Worked revision path: PC1 -> R1 -> R2 -> PC3 / 复习题路径</h3>
 <p class="content-p">Given: PC1 <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> 10.1.1.2, <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> 54-89-98-4D-14-DD; R1 <span class="glossary-term" data-tip="Local Area Network - covers a building or office (e.g., switched Ethernet, Wi-Fi)">LAN</span>1 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> 00E0-FC39-7FFE; R1 <span class="glossary-term" data-tip="Local Area Network - covers a building or office (e.g., switched Ethernet, Wi-Fi)">LAN</span>2 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> 00E0-FC39-7FFD; R2 <span class="glossary-term" data-tip="Local Area Network - covers a building or office (e.g., switched Ethernet, Wi-Fi)">LAN</span>2 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> 00E0-FC90-11D3; R2 <span class="glossary-term" data-tip="Local Area Network - covers a building or office (e.g., switched Ethernet, Wi-Fi)">LAN</span>3 <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> 00E0-FC90-11D4; PC3 <span class="glossary-term" data-tip="Internet Protocol - network-layer logical addressing (IPv4: 32-bit)">IP</span> 10.3.3.2, <span class="glossary-term" data-tip="Media Access Control - 48-bit link-layer hardware address">MAC</span> 54-89-98-7E-29-AF.</p>
-<div class="source-note"><a href="计算机网络课件/SOF203-Chap3-Link Layer - Part 1.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap3-Link Layer - Part 1.pdf, PDF pp. 12-26</a>; <a href="计算机网络课件/SOF203 Final Exam Revision Questions.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203 Final Exam Revision Questions.pdf, Q5</a></div>
+<div class="source-note"><a href="计算机网络课件/SOF203-Chap3-Link Layer - Part 1.pdf#page=12" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap3-Link Layer - Part 1.pdf, PDF pp. 12-26</a>; <a href="计算机网络课件/SOF203 Final Exam Revision Questions.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203 Final Exam Revision Questions.pdf, Q5</a></div>
 </section>
 <section id="sec15" class="topic-section">
 <h2 class="topic-title"><span class="en-text">15. TCP Sequence/Acknowledgment and Reliable Transfer</span>
@@ -500,7 +500,7 @@ a{color:var(--primary);text-decoration:none}
 <p class="content-p">Second segment: Seq = 127+80 = 207; source port 302; destination port 80.</p>
 <p class="content-p">If the first segment arrives first: B sends <span class="glossary-term" data-tip="Acknowledgment - confirms receipt; TCP uses cumulative ACK numbers">ACK</span>=207, source port 80, destination port 302.</p>
 <p class="content-p">If the second segment arrives first: bytes beginning at 127 are still missing, so B sends duplicate cumulative <span class="glossary-term" data-tip="Acknowledgment - confirms receipt; TCP uses cumulative ACK numbers">ACK</span>=127.</p>
-<div class="source-note"><a href="计算机网络课件/SOF203-Chap5-TransportLayer-Part1.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap5-TransportLayer-Part1.pdf, PDF pp. 16-50</a>; <a href="计算机网络课件/SOF203-Chap5-TransportLayer-Part2.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap5-TransportLayer-Part2.pdf, PDF pp. 7-50</a>; <a href="计算机网络课件/SOF203 Final Exam Revision Questions.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203 Final Exam Revision Questions.pdf, Q9</a></div>
+<div class="source-note"><a href="计算机网络课件/SOF203-Chap5-TransportLayer-Part1.pdf#page=16" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap5-TransportLayer-Part1.pdf, PDF pp. 16-50</a>; <a href="计算机网络课件/SOF203-Chap5-TransportLayer-Part2.pdf#page=7" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap5-TransportLayer-Part2.pdf, PDF pp. 7-50</a>; <a href="计算机网络课件/SOF203 Final Exam Revision Questions.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203 Final Exam Revision Questions.pdf, Q9</a></div>
 </section>
 <section id="sec16" class="topic-section">
 <h2 class="topic-title"><span class="en-text">16. HTTP Request and Response Analysis</span>
@@ -526,7 +526,7 @@ a{color:var(--primary);text-decoration:none}
 <p class="content-p">Last modified: Sat, 10 Dec 2005 18:27:46 GMT, from Last-Modified.</p>
 <p class="content-p">Returned length: 3,874 bytes, from Content-Length.</p>
 <p class="content-p">First five entity-body bytes/characters: <!doc.</p>
-<div class="source-note"><a href="计算机网络课件/SOF203-Chap6-Application Layer.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap6-Application Layer.pdf, PDF pp. 39-52</a>; <a href="计算机网络课件/SOF203 Final Exam Revision Questions.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203 Final Exam Revision Questions.pdf, Q12-</a></div>
+<div class="source-note"><a href="计算机网络课件/SOF203-Chap6-Application Layer.pdf#page=39" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203-Chap6-Application Layer.pdf, PDF pp. 39-52</a>; <a href="计算机网络课件/SOF203 Final Exam Revision Questions.pdf" target="_blank" rel="noopener" title="Open PDF in new tab">SOF203 Final Exam Revision Questions.pdf, Q12-</a></div>
 </section>
 <section id="secQA" class="topic-section">
 <h2 class="topic-title"><span class="en-text">Appendix A. Final Revision Questions — Detailed Solutions</span> <span class="cn-text">复习题精讲（点击展开）</span></h2>
